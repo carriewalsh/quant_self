@@ -44,6 +44,7 @@ async function create(req,res) {
   try {
     const newFood = await Food.query()
     .insert({name: req.query.name, calories: req.query.calories})
+    res.setHeader("Content-Type", "application/json");
     res.send(newFood)
   } catch (error) {
       res.status(404).json({ error });
@@ -55,6 +56,7 @@ async function update(req,res) {
     const editedFood = await Food.query()
     .patchAndFetchById(req.params.id, req.query)
     if (editedFood) {
+      res.setHeader("Content-Type", "application/json");
       res.send(editedFood)
     }
     else {
