@@ -42,8 +42,9 @@ async function show(req,res) {
 
 async function create(req,res) {
   try {
+    eval(pry.it)
     const newFood = await Food.query()
-    .insert({name: req.query.name, calories: req.query.calories})
+    .insert({name: req.body.name, calories: req.body.calories})
     res.setHeader("Content-Type", "application/json");
     res.send(newFood)
   } catch (error) {
@@ -54,7 +55,7 @@ async function create(req,res) {
 async function update(req,res) {
   try {
     const editedFood = await Food.query()
-    .patchAndFetchById(req.params.id, req.query)
+    .patchAndFetchById(req.params.id, req.body)
     if (editedFood) {
       res.setHeader("Content-Type", "application/json");
       res.send(editedFood)
