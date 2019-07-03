@@ -1,4 +1,4 @@
-const knex = require('knex')
+const knex = require('knex')({client: 'pg'})
 const connection = require('../knexfile')
 const { Model } = require('objection')
 
