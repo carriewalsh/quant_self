@@ -9,6 +9,8 @@ class Meal extends Model {
     return 'meals'
   }
   static get relationMappings () {
+    const Food = require('./food')
+
     return {
       foods: {
         relation: Model.ManyToManyRelation,
@@ -19,7 +21,7 @@ class Meal extends Model {
             from: 'food_meals.meal_id',
             to: 'food_meals.food_id'
           },
-          to: 'food.id'
+          to: 'foods.id'
         }
       }
     }
