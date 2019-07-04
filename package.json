@@ -49,6 +49,7 @@
     "@babel/polyfill": "^7.4.0",
     "core-js": "^3.0.1",
     "knex": "^0.18.2",
+    "node-fetch": "^2.6.0",
     "objection": "^1.6.9",
     "objective": "0.0.40",
     "pg": "^7.11.0",
