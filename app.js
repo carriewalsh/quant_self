@@ -1,4 +1,5 @@
 const express = require("express");
+var bodyParser = require('body-parser')
 const app = express();
 const environment = process.env.NODE_ENV || "development";
 const configuration = require("./knexfile")[environment];
@@ -9,6 +10,7 @@ var indexRouter = require('./routes/index');
 var foodsRouter = require('./routes/api/v1/foods');
 var mealsRouter = require('./routes/api/v1/meals');
 
+app.use(bodyParser.json())
 app.use('/', indexRouter);
 app.use('/api/v1/foods', foodsRouter);
 app.use('/api/v1/meals', mealsRouter);
