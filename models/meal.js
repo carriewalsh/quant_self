@@ -1,11 +1,7 @@
-
 const knex = require('knex')({client: 'pg'})
-
 const connection = require('../knexfile')
 const { Model } = require('objection')
-
 const knexConnection = knex(connection)
-
 Model.knex(knexConnection)
 
 class Meal extends Model {
@@ -13,6 +9,8 @@ class Meal extends Model {
     return 'meals'
   }
   static get relationMappings () {
+    const Food = require('./food')
+
     return {
       foods: {
         relation: Model.ManyToManyRelation,
@@ -23,7 +21,7 @@ class Meal extends Model {
             from: 'food_meals.meal_id',
             to: 'food_meals.food_id'
           },
-          to: 'food.id'
+          to: 'foods.id'
         }
       }
     }
