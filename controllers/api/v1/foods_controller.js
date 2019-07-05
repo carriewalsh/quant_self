@@ -45,10 +45,10 @@ async function create(req,res) {
     const newFood = await Food.query()
     .insert({name: req.body.name, calories: req.body.calories})
     res.setHeader("Content-Type", "application/json");
-    res.send(
-      message: `${req.body.name} has been added to your foods`,
-      data: newFood
-    )
+    res.send(JSON.stringify({
+      "message": `${req.body.name} has been added to your foods`,
+      "data": newFood
+    }))
   } catch (error) {
       res.status(404).json({ error });
     };
@@ -60,10 +60,10 @@ async function update(req,res) {
     .patchAndFetchById(req.params.id, req.body)
     if (editedFood) {
       res.setHeader("Content-Type", "application/json");
-      res.send(
-        message: `${req.body.name} has been edited`,
-        data: editedFood
-      )
+      res.send(JSON.stringify({
+        "message": `${editedFood.name} has been edited`,
+        "data": editedFood
+      }))
     }
     else {
       res.status(404).json({
@@ -81,9 +81,9 @@ async function destroy(req,res) {
     .findById(req.params.id)
     if (deletedFood) {
       await Food.query().findById(req.params.id).delete()
-      res.send(
-        message: `${deletedFood.name} has been deleted.`
-      )
+      res.send(JSON.stringify({
+        "message": `${deletedFood.name} has been deleted.`
+      }))
     }
     else {
       res.status(404).json({
