@@ -29,10 +29,17 @@ describe('api', () => {
 
   test('It should return a specific food', () => {
     return request(app).get("/api/v1/foods/1").then(response => {
-      console.log(response.body["name"])
       expect(response.statusCode).toBe(200)
       expect(response.body["id"]).toEqual(1)
       expect(response.body["name"]).toEqual("cheese")
+    })
+  })
+
+  test('It should add a new food', () => {
+    const newFood = {name: "test_food", calories: 0}
+    return request(app).post("/api/v1/foods").send(newFood).then(response => {
+      expect(response.body["message"]).toEqual("test_food has been added to your foods")
+      expect(response.body["data"]["name"]).toEqual("test_food")
     })
   })
 });
