@@ -42,4 +42,13 @@ describe('api', () => {
       expect(response.body["data"]["name"]).toEqual("test_food")
     })
   })
+
+  test('It should edit a food', () => {
+    const editFood = {name: "cheddar cheese"}
+    return request(app).patch('/api/v1/foods/1').send(editFood).then(response => {
+      expect(response.body["message"]).toEqual("cheddar cheese has been edited")
+      expect(response.body["data"]["id"]).toEqual(1)
+      expect(response.body["data"]["name"]).not.toEqual("cheese")
+    })
+  })
 });
