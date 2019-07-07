@@ -53,7 +53,7 @@ module.exports = {
   test: {
     client: 'pg',
     connection: {
-      database: 'quant_self',
+      database: 'quant_self_test',
       user: 'walsh',
       password: null
     },
