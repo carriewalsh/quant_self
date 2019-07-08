@@ -1,0 +1,76 @@
+body {
+  background-image: url(https://pinchofyum.com/wp-content/uploads/Buffalo-Cauliflower-Tacos-with-Avocado-Crema-Recipe.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: 'DM Serif Display', serif;
+}
+
+nav {
+  background: #F5F5F5;
+  color: #133512;
+  display: flex;
+  letter-spacing: 2.5px;
+  align-items: center;
+  justify-content: center;
+  font-size: 45px;
+  height: 100px;
+  margin-top: 0px;
+  width: 100%;
+}
+
+h1 {
+  margin: 0px;
+}
+
+h2 {
+  font-size: 35px;
+  letter-spacing: 2px;
+  text-align: center;
+  width: 50%;
+}
+h3 {
+  font-size: 28px;
+  letter-spacing: 2px;
+}
+
+.big-section {
+  background: rgba(245,245,245,0.85);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 15px;
+}
+
+.documentation, .user-view{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+
+}
+
+.foods, .meals {
+  text-align: center;
+  width: 95%;
+}
+
+.orange-hover:hover {
+  background: #99301B;
+  color: #F5F5F5;
+  cursor:pointer;
+  transition: all .3s ease-in-out;
+}
+
+.lime-hover:hover {
+  background: #879F2D;
+  color: #F5F5F5;
+  cursor:pointer;
+  transition: all .3s ease-in-out;
+}
+
+.block {
+  background: #F1F1F1;
+  text-align: left;
+  margin-left: 15px;
+}
