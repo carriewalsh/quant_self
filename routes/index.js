@@ -7,4 +7,8 @@ router.get('/', function(req, res, next) {
   res.render('index');
 });
 
+router.get('/api/v1', function(req, res, next) {
+  res.render('index');
+});
+
 module.exports = router;

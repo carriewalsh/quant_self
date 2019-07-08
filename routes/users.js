@@ -16,12 +16,21 @@ router.get('/my_foods', async function(req, res, next) {
     res.status(404).json({error})
   }
 })
+const pry = require('pryjs')
 
-router.get('/my_meals', async function(req, res, next) {
+router.get('/my_meals', async function(req, res) {
   try {
-    const meals = await Meal
+    let meals = await Meal
       .query().eager('foods');
-      res.render('my_meals.ejs', {meals: meals});
+    var totalCalories = {}
+    meals.forEach(async meal => {
+      totalCalories[meal.id] = await meal.totalCalories()
+    })
+
+    res.render('my_meals.ejs', {
+      meals: meals,
+      totalCalories: totalCalories
+    });
     }
   catch (error) {
     res.status(404).json({ error })
