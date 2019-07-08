@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Quantified Self</title>
+    <link rel="stylesheet" href="../styles.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=DM+Serif+Display&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="nav-bar" role="banner">
+      <h1>Quantified Self API</h1>
+    </nav>
+    <section class="big-section">
+      <h2>My Foods</h2>
+      <% foods.forEach(function(food) {%>
+        <p><%= food["name"] %> - calories: <%= food["calories"] %></p>
+      <%});%>
+    </section>
+    <!-- <script type="text/javascript" src="../models/food.js">
+
+    </script> -->
+  </body>
+</html>

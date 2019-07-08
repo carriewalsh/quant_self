@@ -4,7 +4,8 @@
   "description": "A light foundation for your next frontend project based on webpack.",
   "scripts": {
     "build": "webpack --config webpack/webpack.config.prod.js  --colors",
-    "start": "webpack-dev-server --open --config webpack/webpack.config.dev.js"
+    "start": "webpack-dev-server --open --config webpack/webpack.config.dev.js",
+    "test": "jest --watch"
   },
   "repository": {
     "type": "git",
@@ -28,6 +29,7 @@
     "@babel/plugin-proposal-class-properties": "^7.4.0",
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/preset-env": "^7.4.2",
+    "babel-jest": "^24.8.0",
     "babel-loader": "^8.0.5",
     "clean-webpack-plugin": "^2.0.2",
     "copy-webpack-plugin": "^5.0.3",
@@ -39,7 +41,9 @@
     "mini-css-extract-plugin": "^0.7.0",
     "node-sass": "^4.12.0",
     "sass-loader": "^7.1.0",
+    "shelljs": "^0.8.3",
     "style-loader": "^0.23.1",
+    "supertest": "^4.0.2",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0",
     "webpack-dev-server": "^3.2.1",
@@ -49,12 +53,19 @@
     "@babel/polyfill": "^7.4.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
+    "consolidate": "^0.15.1",
     "core-js": "^3.0.1",
     "email-validator": "^2.0.4",
+    "ejs": "^2.6.2",
+    "express-cors": "0.0.3",
+    "jquery": "^3.4.1",
+    "jest": "^24.8.0",
     "knex": "^0.18.2",
+    "mustache": "^3.0.1",
     "node-fetch": "^2.6.0",
     "objection": "^1.6.9",
     "objective": "0.0.40",
+    "path": "^0.12.7",
     "pg": "^7.11.0",
     "pryjs": "^1.0.3"
   }

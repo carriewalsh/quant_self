@@ -26,6 +26,16 @@ class Meal extends Model {
       }
     }
   }
+
+  totalCalories = async function(meal_id) {
+    const meal = await Meal.query().findById(meal_id).eager('foods')
+    var total = 0
+    meal["foods"].forEach(function(food) {
+      total += parseInt(food["calories"])
+    })
+    console.log(total)
+    return total
+  }
 }
 
 module.exports = Meal
