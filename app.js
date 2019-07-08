@@ -18,12 +18,15 @@ var usersRouter = require('./routes/users')
 
 app.use(bodyParser.json())
 app.use('/', indexRouter);
+app.use('/api/v1', indexRouter);
 app.use('/api/v1/foods', foodsRouter);
 app.use('/api/v1/meals', mealsRouter);
 app.use('/users', usersRouter);
 
 // app.engine('html')
 app.use(express.static(path.join(__dirname + '/public')));
+app.use('/jquery', express.static(__dirname + '/node_modules/jquery/dist/'));
+
 
 app.use(cors());
 app.set('views', path.join(__dirname, 'views'));

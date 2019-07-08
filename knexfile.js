@@ -48,20 +48,5 @@ module.exports = {
     seeds: {
       directory: './db/seeds/dev'
     }
-  },
-
-  test: {
-    client: 'pg',
-    connection: {
-      database: 'quant_self_test',
-      user: 'walsh',
-      password: null
-    },
-    migrations: {
-      directory: './db/migrations'
-    },
-    seeds: {
-      directory: './db/seeds/dev'
-    }
   }
 };
