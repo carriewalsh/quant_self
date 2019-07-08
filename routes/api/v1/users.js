@@ -3,19 +3,15 @@ var router = express.Router();
 var User = require('../../../models/user');
 var bcrypt = require('bcryptjs');
 var validator = require('email-validator');
+const pry = require('pryjs');
 
 router.post("/", function(req,res,next) {
   var email = req.body.email
   var password = req.body.password
   var confirm = req.body.passwordConfirmation
-
   if (email)
-
-  User.findOne({
-    where: {
-      email: email
-    }
-  }).then(result => {
+  User.query().where('email', email)
+  .then(result => {
     if (result) {
       res.setHeader("Content-Type", "application/json");
       res.status(409).json({
@@ -52,6 +48,7 @@ router.post("/", function(req,res,next) {
           bcrypt.hash(req.body.password, salt, async function(err,hash) {
             try
               {
+                eval(pry.it)
               await User
                 .query()
                 .insert({ email: email, password: hash, api_key: Math.random().toString(36).substring(2,8) })
