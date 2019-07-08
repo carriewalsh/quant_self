@@ -6,6 +6,7 @@ const configuration = require("../../../knexfile")[environment];
 const database = require("knex")(configuration);
 const Food = require('../../../models/food');
 const Meal = require('../../../models/meal');
+const pry = require('pryjs')
 
 
 
@@ -20,6 +21,27 @@ router.get('/', async (request, response) => {
       response.status(404).json({ error })
     }
 });
+
+
+// testing endpoint
+router.post('/', async (request, response) => {
+  try
+    {
+      const newMeal = await Meal
+                        .query()
+                        .insert( { name: request.body.name} )
+      response.setHeader("Content-Type", "application/json");
+      response.send(JSON.stringify({
+        "message": `${request.body.name} has been added to your meals`,
+        "data": newMeal
+      }))
+
+    } catch (error) {
+      eval(pry.it)
+        response.status(404).json( { error} );
+      };
+});
+
 
 router.post('/:meal_id/foods/:id', async (request, response) => {
   try
