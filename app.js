@@ -1,9 +1,11 @@
 const express = require("express");
 var bodyParser = require('body-parser')
 const app = express();
+var pry = require('pryjs');
 const environment = process.env.NODE_ENV || "development";
 const configuration = require("./knexfile")[environment];
-const database = require("knex")(configuration);
+// eval(pry.it)
+// const database = require("knex")(configuration);
 
 const cors = require('express-cors');
 const path = require('path');
@@ -45,6 +47,7 @@ app.get('/my_foods', function(req, res, next) {
 //       console.log(error)
 //     })
 // })
+
 
 
 module.exports = app;
