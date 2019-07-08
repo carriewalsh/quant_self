@@ -21,7 +21,7 @@ module.exports = {
   },
 
   staging: {
-    client: 'postgresql',
+    client: 'pg',
     connection: {
       database: 'quant_self_staging',
       user:     'ethangrab',
@@ -36,7 +36,7 @@ module.exports = {
   },
 
   production: {
-    client: 'postgresql',
+    client: 'pg',
     connection: {
       database: 'quant_self_production',
       user:     'ethangrab',
