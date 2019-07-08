@@ -11,12 +11,15 @@
       <h1>Quantified Self API</h1>
     </nav>
     <section class="big-section">
-      <h2>My Foods</h2>
-      <% foods.forEach(function(food) {%>
-        <p><%= food["name"] %> - calories: <%= food["calories"] %></p>
+      <h2>My Meals</h2>
+      <% meals.forEach(function(meal) {%>
+        <p><%= meal["name"] %> -</p>
+        <% meal["foods"].forEach(function(food) {%>
+            <p><%= food["name"] %> - calories: <%= food["calories"] %></p>
+        <%});%>
       <%});%>
     </section>
-    <!-- <script type="text/javascript" src="../models/food.js">
+    <!-- <script type="text/javascript" src="../models/meal.js">
 
     </script> -->
   </body>
