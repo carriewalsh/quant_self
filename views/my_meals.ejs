@@ -13,10 +13,13 @@
     <section class="big-section">
       <h2>My Meals</h2>
       <% meals.forEach(function(meal) {%>
-        <p><%= meal["name"] %> -</p>
+        <h2><%= meal["name"] %> -</h2>
+        <% var totalCalories = 0 %>
         <% meal["foods"].forEach(function(food) {%>
             <p><%= food["name"] %> - calories: <%= food["calories"] %></p>
+            <% totalCalories += parseInt(food["calories"]) %>
         <%});%>
+        <p>Total Calories: <%= totalCalories %></p>
       <%});%>
     </section>
     <!-- <script type="text/javascript" src="../models/meal.js">

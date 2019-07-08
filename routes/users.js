@@ -18,7 +18,6 @@ router.get('/my_foods', async function(req, res, next) {
 })
 
 router.get('/my_meals', async function(req, res, next) {
-  console.log(req)
   try {
     const meals = await Meal
       .query().eager('foods');
