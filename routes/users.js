@@ -34,24 +34,49 @@ router.get('/my_foods', (req,res) => {
       })
   })
 
-router.get('/my_meals', async function(req, res) {
-  try {
-    let meals = await Meal
-      .query().eager('foods');
-    var totalCalories = {}
-    meals.forEach(async meal => {
-      totalCalories[meal.id] = await meal.totalCalories()
-    })
+// router.get('/my_meals', async function(req, res) {
+//   try {
+//     let meals = await Meal
+//       .query().eager('foods');
+//     var totalCalories = {}
+//     meals.forEach(async meal => {
+//       totalCalories[meal.id] = await meal.totalCalories()
+//     })
+//
+//     res.render('my_meals.ejs', {
+//       meals: meals,
+//       totalCalories: totalCalories
+//     });
+//     }
+//   catch (error) {
+//     res.status(404).json({ error })
+//   }
+// })
 
-    res.render('my_meals.ejs', {
-      meals: meals,
-      totalCalories: totalCalories
-    });
-    }
-  catch (error) {
-    res.status(404).json({ error })
-  }
-})
+router.get('/my_meals', (req,res) => {
+  fetch('http://localhost:3000/api/v1/meals')
+    .then(response => {
+      if (response.ok) {
+        return response.json();}
+        throw new Error('Request Failed.');},
+        networkError => console.log(networkError.message))
+    .then(meals => {
+      let totalCalories = {}
+      meals.forEach(meal => {
+        totalCalories[meal.id] = 0
+        meal["foods"].forEach(food => {
+          totalCalories[meal.id] += parseInt(food["calories"])
+        })
+      })
+      res.render('my_meals.ejs', {
+        meals: meals,
+        totalCalories: totalCalories
+      })
+    })
+    .catch((error) => {
+        console.log(error)
+      })
+  })
 
 router.get('/my_meals/:id', async function(req,res) {
   try {

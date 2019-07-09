@@ -14,8 +14,8 @@
       <h2>My Meals</h2>
       <% meals.forEach(function(meal) {%>
         <h2><%= meal["name"] %> -</h2>
+        <p>Total Calories: <%= totalCalories[meal.id] %></p>
 
-        <p>Total Calories: <%= meal.totalCalories(meal["id"]) %></p>
       <%});%>
     </section>
     <!-- <script type="text/javascript" src="../models/meal.js">
