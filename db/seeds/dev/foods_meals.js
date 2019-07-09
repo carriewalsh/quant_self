@@ -25,7 +25,7 @@ let foodData = [
     calories: 25},
   {id: 8,
     name: 'egg',
-    calories: 78},
+    calories: 78}
 ]
 
 let foodMealData = [
@@ -59,28 +59,16 @@ let foodMealData = [
 
 let mealData = [
   {id: 1,
-  name: 'breakfast',
-  userId: 1},
+  name: 'breakfast'},
   {id: 2,
-  name: 'lunch',
-  userId: 1},
+  name: 'lunch'},
   {id: 3,
-  name: 'snack',
-  userId: 1},
+  name: 'snack'},
   {id: 4,
-  name: 'dinner',
-  userId: 1},
+  name: 'dinner'},
   {id: 5,
-  name: 'dessert',
-  userId: 1}
+  name: 'dessert'}
 ]
-
-const createUser = (knex,user) => {
-  return knex('users').insert({
-    email: user.email,
-    password: user.password
-  })
-}
 
 const createFood = (knex,food) => {
   return knex('foods').insert({
