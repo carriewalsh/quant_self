@@ -14,7 +14,7 @@ exports.up = function(knex) {
     }),
     knex.schema.createTable('food_meals', function(table) {
       table.increments('id').primary();
-      table.integer('food_id').unsigned().index().references('id').inTable('foods');
+      table.integer('food_id').unsigned().index().references('id').inTable('foods').onDelete('CASCADE');
       table.integer('meal_id').unsigned().index().references('id').inTable('meals');
     })
   ])
