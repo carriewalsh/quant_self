@@ -6,6 +6,7 @@ const configuration = require('../../../knexfile')[environment];
 const database = require('knex')(configuration);
 var Food = require('../../../models/food')
 var Meal = require('../../../models/meal')
+var FoodMeal = require('../../../models/food_meal')
 var pry = require('pryjs');
 
 async function index(req,res) {
@@ -80,9 +81,9 @@ async function destroy(req,res) {
     const deletedFood = await Food.query()
     .findById(req.params.id)
     if (deletedFood) {
-      await FoodMeal.query().delete().where({
-        food_id: req.params.id
-      })
+      // await FoodMeal.query().delete().where({
+      //   food_id: req.params.id
+      // })
       await Food.query().findById(req.params.id).delete()
       res.send(JSON.stringify({
         "message": `${deletedFood.name} has been deleted.`
@@ -94,6 +95,7 @@ async function destroy(req,res) {
       })
     }
   } catch (error) {
+      eval(pry.it)
       res.status(404).json({ error });
     };
 }
