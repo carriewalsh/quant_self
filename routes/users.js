@@ -69,6 +69,7 @@ router.get('/my_meals', (req,res) => {
         })
       })
       res.render('my_meals.ejs', {
+        meal: undefined, //this is bad
         meals: meals,
         totalCalories: totalCalories
       })
@@ -76,21 +77,45 @@ router.get('/my_meals', (req,res) => {
     .catch((error) => {
         console.log(error)
       })
-  })
+  });
 
-router.get('/my_meals/:id', async function(req,res) {
-  try {
-    let meal = await Meal.query().findById(req.params.id).eager('foods');
-    var totalCalories = await meal.totalCalories()
-    // eval(pry.it)
-    res.render('my_meals_id.ejs', {
+router.get('/my_meals/:id', (req,res) => {
+  fetch(`http://localhost:3000/api/v1/meals/${req.params.id}/foods`)
+  .then(response => {
+    if (response.ok) {
+      return response.json();}
+      throw new Error('Request Failed.');},
+      networkError => console.log(networkError.message))
+  .then(meal => {
+    let totalCalories = 0;
+    meal["foods"].forEach(food => {
+      totalCalories += parseInt(food["calories"])
+    })
+    res.render('my_meals.ejs', {
+      meals: undefined, //this is bad
       meal: meal,
       totalCalories: totalCalories,
       foods: meal["foods"]
     })
-  }
-  catch (error) {
-    res.status(404).json({ error })
-  }
-})
+  })
+  .catch((error) => {
+      console.log(error)
+    })
+});
+
+// router.get('/my_meals/:id', async function(req,res) {
+//   try {
+//     let meal = await Meal.query().findById(req.params.id).eager('foods');
+//     var totalCalories = await meal.totalCalories()
+//     // eval(pry.it)
+//     res.render('my_meals.ejs', {
+//       meal: meal,
+//       totalCalories: totalCalories,
+//       foods: meal["foods"]
+//     })
+//   }
+//   catch (error) {
+//     res.status(404).json({ error })
+//   }
+// })
 module.exports = router;

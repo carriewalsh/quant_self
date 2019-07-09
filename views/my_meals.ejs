@@ -12,11 +12,18 @@
     </nav>
     <section class="big-section">
       <h2>My Meals</h2>
-      <% meals.forEach(function(meal) {%>
+      <% if (meals) {%>
+        <% meals.forEach(function(meal) {%>
+          <h2><%= meal["name"] %> -</h2>
+          <p>Total Calories: <%= totalCalories[meal.id] %></p>
+
+        <%})};%>
+      <% if (meal) { %>
         <h2><%= meal["name"] %> -</h2>
         <p>Total Calories: <%= totalCalories[meal.id] %></p>
-
-      <%});%>
+        <% foods.forEach(food => {%>
+          <p><%= food.name %> - calories: <%= food.calories %></p>
+      <% })}; %>
     </section>
     <!-- <script type="text/javascript" src="../models/meal.js">
 
