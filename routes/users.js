@@ -84,42 +84,43 @@ router.get('/login', (req,res) => {
   res.render('login.ejs')
 })
 
-// router.post('/sessions', (req,res) => {
-//   var email = req.body.email
-//   var passwordAttempt = req.body.password
-//   if (validator.validate(email)) {
-//     User.findOne({where: {
-//       email: email
-//     }}).then(result => {
-//       if (result) {
-//         let passwordHash = result["dataValues"]["password"]
-//         let apiKey = result["dataValues"]["api_key"]
-//         let verify = bcrypt.compare(passwordAttempt, passwordHash)
-//         .then(comparison => {
-//           if (comparison) {
-//             session.addKey(apiKey) //will this work
-//           }
-//           else {
-//             res.setHeader("Content-Type", "application/json");
-//             res.status(404).json({
-//               error: "Email and password do not match."
-//             });
-//           }
-//         }).catch(error => {
-//             res.setHeader("Content-Type", "application/json");
-//             res.status(500).json({
-//               error: "Email does not exist in system."
-//             });
-//           });
-//       }
-//     })
-//   }
-//   else {
-//     res.setHeader("Content-Type", "application/json");
-//     res.status(409).json({
-//       error:`Invalid email address.`
-//     });
-// })
+router.post('/sessions', (req,res) => {
+  var email = req.body.email
+  var passwordAttempt = req.body.password
+  eval(pry.it)
+  if (validator.validate(email)) {
+    User.findOne({where: {
+      email: email
+    }}).then(result => {
+      if (result) {
+        let passwordHash = result["dataValues"]["password"]
+        let apiKey = result["dataValues"]["api_key"]
+        let verify = bcrypt.compare(passwordAttempt, passwordHash)
+        .then(comparison => {
+          if (comparison) {
+            session.addKey(apiKey) //will this work
+          }
+          else {
+            res.setHeader("Content-Type", "application/json");
+            res.status(404).json({
+              error: "Email and password do not match."
+            });
+          }
+        }).catch(error => {
+            res.setHeader("Content-Type", "application/json");
+            res.status(500).json({
+              error: "Email does not exist in system."
+            });
+          });
+      }
+    })
+  }
+  else {
+    res.setHeader("Content-Type", "application/json");
+    res.status(409).json({
+      error:`Invalid email address.`
+    });
+}})
 
 
 module.exports = router;
