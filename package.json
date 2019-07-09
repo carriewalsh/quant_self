@@ -53,6 +53,7 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.4.0",
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "consolidate": "^0.15.1",
     "core-js": "^3.0.1",
@@ -61,7 +62,8 @@
     "express-cors": "0.0.3",
     "jest": "^24.8.0",
     "jquery": "^3.4.1",
-    "knex": "^0.18.2",
+    "email-validator": "^2.0.4",
+    "knex": "^0.18.3",
     "mustache": "^3.0.1",
     "node-fetch": "^2.6.0",
     "objection": "^1.6.9",

@@ -6,7 +6,7 @@ module.exports = {
     client: 'pg',
     connection: {
       host : '127.0.0.1',
-      user : 'walsh',
+      user : 'ethangrab',
       password : null,
       database : 'quant_self',
       charset: 'utf8'
@@ -24,7 +24,7 @@ module.exports = {
     client: 'pg',
     connection: {
       database: 'quant_self_staging',
-      user:     'walsh',
+      user:     'ethangrab',
       password: null
     },
     migrations: {
@@ -37,7 +37,9 @@ module.exports = {
 
   production: {
     client: 'pg',
+
     connection: process.env.DATABASE_URL,
+
     migrations: {
       directory: './db/migrations'
     },
@@ -50,7 +52,7 @@ module.exports = {
     client: 'pg',
     connection: {
       database: 'quant_self_test',
-      user: 'walsh',
+      user: 'ethangrab',
       password: null
     },
     migrations: {

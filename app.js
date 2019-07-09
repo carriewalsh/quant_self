@@ -11,9 +11,9 @@ const cors = require('express-cors');
 const path = require('path');
 
 
-var indexRouter = require('./routes/index');
-var foodsRouter = require('./routes/api/v1/foods');
-var mealsRouter = require('./routes/api/v1/meals');
+const indexRouter = require('./routes/index');
+const foodsRouter = require('./routes/api/v1/foods');
+const mealsRouter = require('./routes/api/v1/meals');
 var usersRouter = require('./routes/users')
 
 app.use(bodyParser.json())
