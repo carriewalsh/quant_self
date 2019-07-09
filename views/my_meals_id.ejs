@@ -11,11 +11,11 @@
       <h1>Quantified Self API</h1>
     </nav>
     <section class="big-section">
-      <h2>My Foods</h2>
-      <% foods.forEach(function(food) {%>
-        <p><%= food["name"] %> - calories: <%= food["calories"] %></p>
-      <%});%>
-      <a href="http://localhost:3000/users/my_meals">TRY THIS LINK</a>
+      <h2><%= meal.name %></h2>
+      <% foods.forEach(food => {%>
+        <a href="http://localhost:3000/users/my_foods"><%= food.name %> - calories: <%= food.calories %></a>
+        <br>
+      <% }) %>
     </section>
     <!-- <script type="text/javascript" src="../models/food.js">
 

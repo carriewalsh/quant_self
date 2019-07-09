@@ -25,7 +25,7 @@ app.use('/users', usersRouter);
 
 // app.engine('html')
 app.use(express.static(path.join(__dirname + '/public')));
-app.use('/jquery', express.static(__dirname + '/node_modules/jquery/dist/'));
+// app.use('/jquery', express.static(__dirname + '/node_modules/jquery/dist/'));
 
 
 app.use(cors());

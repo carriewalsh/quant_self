@@ -36,4 +36,20 @@ router.get('/my_meals', async function(req, res) {
     res.status(404).json({ error })
   }
 })
+
+router.get('/my_meals/:id', async function(req,res) {
+  try {
+    let meal = await Meal.query().findById(req.params.id).eager('foods');
+    var totalCalories = await meal.totalCalories()
+    // eval(pry.it)
+    res.render('my_meals_id.ejs', {
+      meal: meal,
+      totalCalories: totalCalories,
+      foods: meal["foods"]
+    })
+  }
+  catch (error) {
+    res.status(404).json({ error })
+  }
+})
 module.exports = router;
