@@ -4,8 +4,10 @@
   "description": "A light foundation for your next frontend project based on webpack.",
   "scripts": {
     "build": "webpack --config webpack/webpack.config.prod.js  --colors",
-    "start": "webpack-dev-server --open --config webpack/webpack.config.dev.js",
-    "test": "jest --watch"
+    "dev": "webpack-dev-server --open --config webpack/webpack.config.dev.js",
+    "test": "jest --watch",
+    "start": "node server.js",
+    "postinstall": "webpack -p"
   },
   "repository": {
     "type": "git",
@@ -56,10 +58,11 @@
     "consolidate": "^0.15.1",
     "core-js": "^3.0.1",
     "ejs": "^2.6.2",
-    "email-validator": "^2.0.4",
+    "express": "^4.17.1",
     "express-cors": "0.0.3",
     "jest": "^24.8.0",
     "jquery": "^3.4.1",
+    "email-validator": "^2.0.4",
     "knex": "^0.18.3",
     "mustache": "^3.0.1",
     "node-fetch": "^2.6.0",

@@ -37,11 +37,9 @@ module.exports = {
 
   production: {
     client: 'pg',
-    connection: {
-      database: 'quant_self_production',
-      user:     'ethangrab',
-      password: null
-    },
+
+    connection: process.env.DATABASE_URL,
+
     migrations: {
       directory: './db/migrations'
     },
