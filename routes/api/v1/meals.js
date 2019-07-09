@@ -7,7 +7,7 @@ const database = require("knex")(configuration);
 const Food = require('../../../models/food');
 const Meal = require('../../../models/meal');
 const pry = require('pryjs')
-var mealsController = require('../../../controllers/api/v1/foods_controller')
+var mealsController = require('../../../controllers/api/v1/meals_controller')
 
 
 router.get('/', async (req,res) => {
