@@ -20,7 +20,7 @@ const pry = require('pryjs')
 // })
 
 router.get('/my_foods', (req,res) => {
-  fetch('http://localhost:3000/api/v1/foods')
+  fetch('https://stormy-brushlands-92125.herokuapp.com/api/v1/foods')
     .then(response => {
       if (response.ok) {
         return response.json();}
@@ -54,7 +54,7 @@ router.get('/my_foods', (req,res) => {
 // })
 
 router.get('/my_meals', (req,res) => {
-  fetch('http://localhost:3000/api/v1/meals')
+  fetch('https://stormy-brushlands-92125.herokuapp.com/api/v1/meals')
     .then(response => {
       if (response.ok) {
         return response.json();}
@@ -80,7 +80,7 @@ router.get('/my_meals', (req,res) => {
   });
 
 router.get('/my_meals/:id', (req,res) => {
-  fetch(`http://localhost:3000/api/v1/meals/${req.params.id}/foods`)
+  fetch(`https://stormy-brushlands-92125.herokuapp.com/api/v1/meals/${req.params.id}/foods`)
   .then(response => {
     if (response.ok) {
       return response.json();}
