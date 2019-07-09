@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Quantified Self</title>
-    <link rel="stylesheet" href="../styles.css" type="text/css">
+    <link rel="stylesheet" href="/styles.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=DM+Serif+Display&display=swap" rel="stylesheet">
   </head>
   <body>
@@ -14,7 +14,7 @@
       <h2>My Meals</h2>
       <% if (meals) {%>
         <% meals.forEach(function(meal) {%>
-          <h2><%= meal["name"] %> -</h2>
+          <a href="/users/my_meals/<%= meal.id %>"><%= meal["name"] %>-</a>
           <p>Total Calories: <%= totalCalories[meal.id] %></p>
 
         <%})};%>
