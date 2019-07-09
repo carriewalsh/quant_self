@@ -50,7 +50,7 @@ async function destroy(request,response) {
       .unrelate()
       .where('foods.id', request.params.id);
 
-      response.status(204)
+      response.status(200).send( ' message: Successfully unrelated' )
     }
       catch (error)
         {
