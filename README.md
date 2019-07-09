@@ -1,7 +1,7 @@
 # Quantified Self
 by Carrie Walsh & Ethan Grab
 
-Deployed site:
+Deployed site: https://stormy-brushlands-92125.herokuapp.com/
 Microservice site:
 
 This pair project is our second working with JavaScript and Express to build an API. The API stores data about foods and meals for users that can eventually sign in and are given an API key.
