@@ -23,6 +23,14 @@ class Meal extends Model {
           },
           to: 'foods.id'
         }
+      },
+
+      users: {
+        relation: Model.BelongsToOneRelation,
+        join: {
+          from: 'meals.user_id',
+          to: 'users.id'
+        }
       }
     }
   }
