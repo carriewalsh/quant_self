@@ -87,7 +87,6 @@ router.get('/login', (req,res) => {
 router.post('/sessions', (req,res) => {
   var email = req.body.email
   var passwordAttempt = req.body.password
-  eval(pry.it)
   if (validator.validate(email)) {
     User.findOne({where: {
       email: email
