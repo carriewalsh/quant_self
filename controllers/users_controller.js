@@ -28,23 +28,27 @@ async function login(req,res) {
           })
         }
         else {
+          res.status(401);
           res.render('login.ejs', {
             flash: 'Email and password do not match.'
           })
         }
       }
+      res.status(401);
       res.render('login.ejs', {
         flash: 'Email not registered in database.'
       })
     }
     else {
+      res.status(403);
       res.render('login.ejs', {
         flash: 'Invalid email address.'
       })
     }
   } catch (error) {
     console.log(error)
-    res.status(404).json({error})
+    res.status(404);
+    res.render('404.html')
   }
 }
 
