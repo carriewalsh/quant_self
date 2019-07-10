@@ -31,9 +31,11 @@ async function login(req,res) {
           })
         }
       }
-      res.status(401).render('login.ejs', {
-        flash: 'Email not registered in database.'
-      })
+      else {
+        res.status(401).render('login.ejs', {
+          flash: 'Email not registered in database.'
+        })
+      }
     }
     else {
       res.status(403).render('login.ejs', {
