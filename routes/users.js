@@ -18,7 +18,6 @@ router.get('/404.html', (req,res) => {
   res.status(404).render('404.html')
 })
 
-
 router.get('/my_foods', (req,res) => {
   if (session.apiKey) {
     fetch('https://stormy-brushlands-92125.herokuapp.com/api/v1/foods')
@@ -102,9 +101,34 @@ router.get('/my_meals/:id', (req,res) => {
   }
 });
 
+router.get('/recipe_search', (req,res) => {
+  res.render('recipe_search.ejs')
+})
+
+router.post('/recipe_search', (req,res) => {
+  // fetch call to microservice
+})
+
+router.get('/recipes', (req,res) => {
+  // show results from microservice
+})
+
+router.get('/register', (req,res) => {
+  session.deleteKey();
+  res.render('register.ejs')
+})
+
+router.post('/register', (req,res) => {
+  usersController.register(req,res)
+})
+
 router.get('/login', (req,res) => {
   session.deleteKey();
   res.render('login.ejs')
+})
+
+router.post('/sessions', (req,res) => {
+  usersController.login(req,res)
 })
 
 router.get('/logout', (req,res) => {
@@ -135,33 +159,6 @@ router.get('/welcome', async (req,res) => {
   else {
     res.status(404).redirect('404.html')
   }
-})
-
-router.get('/all', async (req,res) => {
-  try {
-    // const foods = await database('foods')
-    const foods = await Food.query();
-    const users = await database('users').innerJoin('meals', 'users.id', 'meals.user_id').where('user_id', 1)
-    const meals = Meal.query().eager('foods');
-    // const meals = await database('meals').where('user_id', 1).innerJoin('foods', 'food_meals.food_id','foods.id').select('meals.name').select('foods.name')
-    // const users = await User.query();
-    if (meals) {
-      res.send(meals)
-    }
-    else {
-      eval(pry.it)
-      res.status(404).json({
-        error: "No users here yet!"
-      })
-    }
-  } catch (error) {
-    console.log(error)
-      res.status(404).json({ error });
-    };
-})
-
-router.post('/sessions', (req,res) => {
-  usersController.login(req,res)
 })
 
 
