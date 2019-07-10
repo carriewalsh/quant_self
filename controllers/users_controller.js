@@ -48,7 +48,7 @@ async function login(req,res) {
   } catch (error) {
     console.log(error)
     res.status(404);
-    res.render('404.html')
+    res.redirect('404.html')
   }
 }
 

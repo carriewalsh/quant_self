@@ -14,6 +14,10 @@ var validator = require('email-validator');
 
 var session = require('../models/POJOs/session')
 
+router.get('/404.html', (req,res) => {
+  res.render('404.html')
+})
+
 
 router.get('/my_foods', (req,res) => {
   if (session.apiKey) {
@@ -31,7 +35,8 @@ router.get('/my_foods', (req,res) => {
         })
   }
   else {
-    res.status(404).json({ error });
+    res.status(404);
+    res.redirect('404.html')
   }
   })
 
@@ -65,7 +70,7 @@ router.get('/my_meals', (req,res) => {
   }
   else {
     res.status(404);
-    res.render('404.html')
+    res.redirect('404.html')
   }
   });
 
@@ -95,13 +100,24 @@ router.get('/my_meals/:id', (req,res) => {
         })
   }
   else {
-    res.status(404).json({ error });
+    res.status(404);
+    res.redirect('404.html')
   }
 });
 
 router.get('/login', (req,res) => {
   session.deleteKey();
   res.render('login.ejs')
+})
+
+router.get('/welcome', (req,res) => {
+  if (session.apiKey) {
+    user = database('users').where(apiKey, session.apiKey)
+  }
+  else {
+    res.status(404);
+    res.redirect('404.html')
+  }
 })
 
 router.get('/all', async (req,res) => {
