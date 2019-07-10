@@ -112,9 +112,20 @@ router.get('/login', (req,res) => {
 
 router.get('/logout', (req,res) => {
   session.deleteKey();
-  res.redirect('login.ejs', {
+  res.render('login.ejs', {
     flash: "Successfully logged out."
   })
+})
+
+router.get('/account', async (req,res) => {
+  if (session.apiKey) {
+    user = await database('users').where('apiKey', session.apiKey)
+    res.render('account.ejs', {
+      name: user[0].name,
+      email: user[0].email,
+      apiKey: user[0].apiKey
+    })
+  }
 })
 
 router.get('/welcome', async (req,res) => {

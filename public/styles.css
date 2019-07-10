@@ -39,11 +39,19 @@ input {
   width: 200px;
 }
 
-.big-section {
+.column-section {
   background: rgba(245,245,245,0.85);
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 15px;
+}
+
+.row-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
   margin: 15px;
 }
 
@@ -87,9 +95,37 @@ input {
   justify-content: center;
   align-items: center;
   font-size: 35px;
-  margin: 15px 320px;
-  padding: 40px 200px;
+  margin: 15px 30%;
+  padding: 40px 5%;
 }
+
+.flash {
+  background-color: #FFDBA0;
+  color: #C1521D;
+  font-size: 24px;
+  height: 35px;
+  text-align: center;
+}
+
+.left-box, .right-box {
+  background: rgba(245,245,245,0.85);
+  height: 250px;
+  text-align: center;
+  width: 45%;
+}
+
+p.green {
+  color: #879F2D;
+  font-size: 20px;
+  margin: 15px;
+}
+
+p.orange {
+  color: #99301B;
+  font-size: 20px;
+  margin: 15px;
+}
+
 
 .submit-button {
   background-color: #133512;
@@ -113,12 +149,13 @@ input {
   padding: 5px 15px;
   text-align: center;
   cursor:pointer;
+  transition: all .2s ease-in-out;
 }
 
-.flash {
-  background-color: #FFDBA0;
-  color: #C1521D;
+.medium-button {
   font-size: 24px;
-  height: 35px;
-  text-align: center;
+}
+
+.medium-button:hover {
+  font-size: 24px;
 }
