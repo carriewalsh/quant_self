@@ -7,7 +7,7 @@ const database = require('knex')(configuration);
 var Food = require('../models/food.js')
 var Meal = require('../models/meal.js')
 // var User = require('../models/user.js')
-// var usersController = require('../controllers/users_controller')
+var usersController = require('../controllers/users_controller')
 
 const pry = require('pryjs')
 var validator = require('email-validator');
@@ -89,10 +89,14 @@ router.get('/login', (req,res) => {
 
 router.get('/all', async (req,res) => {
   try {
-    const foods = await database('foods')
-    const users = await database('users')
-    if (users) {
-      res.send(users)
+    // const foods = await database('foods')
+    const foods = await Food.query();
+    const users = await database('users').innerJoin('meals', 'users.id', 'meals.user_id').where('user_id', 1)
+    const meals = Meal.query().eager('foods');
+    // const meals = await database('meals').where('user_id', 1).innerJoin('foods', 'food_meals.food_id','foods.id').select('meals.name').select('foods.name')
+    // const users = await User.query();
+    if (meals) {
+      res.send(meals)
     }
     else {
       eval(pry.it)
@@ -108,38 +112,6 @@ router.get('/all', async (req,res) => {
 
 router.post('/sessions', (req,res) => {
   usersController.login(req,res)
-  // if (validator.validate(email)) {
-  //   const user = User.query()
-  //     .where(email, email)
-  //     .then(result => {
-  //     if (result) {
-  //       let passwordHash = result["dataValues"]["password"]
-  //       let apiKey = result["dataValues"]["api_key"]
-  //       let verify = bcrypt.compare(passwordAttempt, passwordHash)
-  //       .then(comparison => {
-  //         if (comparison) {
-  //           session.addKey(apiKey) //will this work
-  //         }
-  //         else {
-  //           res.setHeader("Content-Type", "application/json");
-  //           res.status(404).json({
-  //             error: "Email and password do not match."
-  //           });
-  //         }
-  //       }).catch(error => {
-  //           res.setHeader("Content-Type", "application/json");
-  //           res.status(500).json({
-  //             error: "Email does not exist in system."
-  //           });
-  //         });
-  //     }
-  //   })
-  // }
-  // else {
-  //   res.setHeader("Content-Type", "application/json");
-  //   res.status(409).json({
-  //     error:`Invalid email address.`
-  //   });
 })
 
 
