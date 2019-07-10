@@ -10,6 +10,7 @@ class Meal extends Model {
   }
   static get relationMappings () {
     const Food = require('./food')
+    const User = require('./user')
 
     return {
       foods: {

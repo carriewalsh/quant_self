@@ -8,6 +8,7 @@ var Food = require('../models/food')
 var Meal = require('../models/meal')
 var User = require('../models/user')
 var pry = require('pryjs');
+var validator = require('email-validator');
 
 async function login(req,res) {
   try {
@@ -42,6 +43,8 @@ async function login(req,res) {
       });
     }
   } catch (error) {
+    eval(pry.it)
+    console.log(error)
     res.status(404).json({error})
   }
 }

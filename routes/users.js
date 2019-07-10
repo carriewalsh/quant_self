@@ -6,8 +6,8 @@ const configuration = require('../knexfile')[environment];
 const database = require('knex')(configuration);
 var Food = require('../models/food.js')
 var Meal = require('../models/meal.js')
-var User = require('../models/user.js')
-var usersController = require('../controllers/users_controller')
+// var User = require('../models/user.js')
+// var usersController = require('../controllers/users_controller')
 
 const pry = require('pryjs')
 var validator = require('email-validator');
@@ -85,6 +85,25 @@ router.get('/my_meals/:id', (req,res) => {
 
 router.get('/login', (req,res) => {
   res.render('login.ejs')
+})
+
+router.get('/all', async (req,res) => {
+  try {
+    const foods = await database('foods')
+    const users = await database('users')
+    if (users) {
+      res.send(users)
+    }
+    else {
+      eval(pry.it)
+      res.status(404).json({
+        error: "No users here yet!"
+      })
+    }
+  } catch (error) {
+    console.log(error)
+      res.status(404).json({ error });
+    };
 })
 
 router.post('/sessions', (req,res) => {
