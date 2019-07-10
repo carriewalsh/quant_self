@@ -39,6 +39,10 @@ input {
   width: 200px;
 }
 
+.radio {
+  width: 12px;
+}
+
 .column-section {
   background: rgba(245,245,245,0.85);
   display: flex;
@@ -114,13 +118,18 @@ input {
   width: 45%;
 }
 
+.padded {
+  padding: 15px;
+  height: 350px;
+}
+
 p.green {
   color: #879F2D;
   font-size: 20px;
   margin: 15px;
 }
 
-p.orange {
+p.orange, label.orange {
   color: #99301B;
   font-size: 20px;
   margin: 15px;
