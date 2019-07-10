@@ -9,8 +9,7 @@ var Meal = require('../models/meal')
 // var User = require('../models/user')
 var pry = require('pryjs');
 var validator = require('email-validator');
-var Session = require('../models/POJOs/session')
-const session = new Session();
+var session = require('../models/POJOs/session')
 
 async function login(req,res) {
   try {
@@ -24,25 +23,24 @@ async function login(req,res) {
         // let verify = bcrypt.compare(passwordAttempt, passwordHash)
         if (passwordAttempt === user[0].password) {
           session.setKey(user[0].apiKey)
-          eval(pry.it)
           res.render('welcome.ejs', {
             name: user[0].name
           })
         }
         else {
-          res.status(404).json({
-            error: "Email and password do not match."
-          });
+          res.render('login.ejs', {
+            flash: 'Email and password do not match.'
+          })
         }
       }
-      res.status(404).json({
-        error: "Email not registered in database"
+      res.render('login.ejs', {
+        flash: 'Email not registered in database.'
       })
     }
     else {
-      res.status(409).json({
-        error:`Invalid email address.`
-      });
+      res.render('login.ejs', {
+        flash: 'Invalid email address.'
+      })
     }
   } catch (error) {
     console.log(error)
