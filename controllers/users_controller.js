@@ -26,27 +26,23 @@ async function login(req,res) {
           res.redirect('/users/welcome')
         }
         else {
-          res.status(401);
-          res.render('login.ejs', {
+          res.status(401).render('login.ejs', {
             flash: 'Email and password do not match.'
           })
         }
       }
-      res.status(401);
-      res.render('login.ejs', {
+      res.status(401).render('login.ejs', {
         flash: 'Email not registered in database.'
       })
     }
     else {
-      res.status(403);
-      res.render('login.ejs', {
+      res.status(403).render('login.ejs', {
         flash: 'Invalid email address.'
       })
     }
   } catch (error) {
     console.log(error)
-    res.status(404);
-    res.redirect('404.html')
+    res.status(404).redirect('404.html')
   }
 }
 
