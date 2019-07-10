@@ -8,20 +8,26 @@
   </head>
   <body>
     <nav class="nav-bar" role="banner">
-      <h1>WELCOME <%= name %>!</h1>
-      <section class="big-section">
-        <div class="left-box">
-          <h2>My Links</h2>
-          <a href="https://stormy-brushlands-92125.herokuapp.com/users/my_meals">My Meals</a>
-          <a href="https://stormy-brushlands-92125.herokuapp.com/users/my_foods">My Foods</a>
-        </div>
-        <div class="right-box">
-          <h2>Find Recipes</h2>
-          <a href="#"></a>
-        </div>
-
-      </section>
+      <a href="http://localhost:3000/users/account" class="submit-button">Account</a>
+      <h2>WELCOME <%= name %>!</h2>
+      <a href="http://localhost:3000/users/logout" class="submit-button">Log Out</a>
     </nav>
+    <section class="row-section">
+      <div class="left-box">
+        <h2>My Links</h2>
+        <section class="row-section">
+          <a href="https://stormy-brushlands-92125.herokuapp.com/users/my_meals" class="submit-button medium-button">My Meals</a>
+          <a href="https://stormy-brushlands-92125.herokuapp.com/users/my_foods" class="submit-button medium-button">My Foods</a>
+        </section>
+      </div>
+      <div class="right-box">
+        <h2>Recipes</h2>
+        <section class="row-section">
+          <a href="https://stormy-brushlands-92125.herokuapp.com/users/my_foods" class="submit-button medium-button">Search Recipes</a>
+        </section>
+      </div>
+
+    </section>
     <!-- <script type="text/javascript" src="../models/food.js">
 
     </script> -->

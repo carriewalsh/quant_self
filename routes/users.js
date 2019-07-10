@@ -112,7 +112,7 @@ router.get('/login', (req,res) => {
 
 router.get('/logout', (req,res) => {
   session.deleteKey();
-  res.render('login.ejs', {
+  res.redirect('login.ejs', {
     flash: "Successfully logged out."
   })
 })
