@@ -110,9 +110,12 @@ router.get('/login', (req,res) => {
   res.render('login.ejs')
 })
 
-router.get('/welcome', (req,res) => {
+router.get('/welcome', async (req,res) => {
   if (session.apiKey) {
-    user = database('users').where(apiKey, session.apiKey)
+    user = await database('users').where('apiKey', session.apiKey)
+    res.render('welcome.ejs', {
+      name: user[0].name
+    })
   }
   else {
     res.status(404);

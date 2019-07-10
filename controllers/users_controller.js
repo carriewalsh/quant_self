@@ -23,9 +23,7 @@ async function login(req,res) {
         // let verify = bcrypt.compare(passwordAttempt, passwordHash)
         if (passwordAttempt === user[0].password) {
           session.setKey(user[0].apiKey)
-          res.render('welcome.ejs', {
-            name: user[0].name
-          })
+          res.redirect('/users/welcome')
         }
         else {
           res.status(401);
