@@ -11,19 +11,24 @@
     <nav class="nav-bar" role="banner">
       <h1>Quantified Self API</h1>
     </nav>
-      <div class="login-box">
-        <!-- <form class="" action="https://stormy-brushlands-92125.herokuapp.com/users/sessions" method="post"> -->
-        <form class="" action="http://localhost:3000/users/sessions" method="post">
-          <label for="email">Email:</label>
-          <input type="email" name="email" placeholder="email@example.com" required=true>
-          <br>
-          <label for="password">Password:</label>
-          <input type="password" name="password" required=true>
-          <br>
-          <input type="submit" name="" value="Log In" class="submit-button">
-        </form>
-        <!-- use jquery to grab the values from the form and send those -->
+    <% if (locals.flash) {%>
+      <div class="flash">
+        <%= flash %>
       </div>
+    <%}%>
+    <div class="login-box">
+      <!-- <form class="" action="https://stormy-brushlands-92125.herokuapp.com/users/sessions" method="post"> -->
+      <form class="" action="http://localhost:3000/users/sessions" method="post">
+        <label for="email">Email:</label>
+        <input type="email" name="email" placeholder="email@example.com" required=true>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" name="password" required=true>
+        <br>
+        <input type="submit" name="" value="Log In" class="submit-button">
+      </form>
+      <!-- use jquery to grab the values from the form and send those -->
+    </div>
     <!-- <script type="text/javascript" src="../models/food.js">
     </script> -->
   </body>
