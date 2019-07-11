@@ -91,7 +91,7 @@ async function register(req,res) {
   }
 }
 
-async function foods() {
+async function foods(req,res) {
   fetch('https://stormy-brushlands-92125.herokuapp.com/api/v1/foods')
   .then(response => {
     if (response.ok) {
@@ -105,7 +105,7 @@ async function foods() {
         console.log(error)
       })
 }
-async function my_meals() {
+async function my_meals(req,res) {
   fetch('https://stormy-brushlands-92125.herokuapp.com/api/v1/meals')
   .then(response => {
     if (response.ok) {
@@ -130,7 +130,7 @@ async function my_meals() {
         console.log(error)
       })
 }
-async function my_meal () {
+async function my_meal(req,res) {
   fetch(`https://stormy-brushlands-92125.herokuapp.com/api/v1/meals/${req.params.id}/foods`)
   .then(response => {
     if (response.ok) {

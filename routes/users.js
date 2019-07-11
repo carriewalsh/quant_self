@@ -45,29 +45,29 @@ router.get('/logout', (req,res) => {
   res.render('login.ejs', {
     flash: "Successfully logged out."
   })
+})
 
-  router.get('/welcome', async (req,res) => {
-    if (session.apiKey) {
-      user = await database('users').where('apiKey', session.apiKey)
-      res.render('welcome.ejs', {
-        name: user[0].name
-      })
-    }
-    else {
-      res.status(404).redirect('404.html')
-    }
-  })
+router.get('/welcome', async (req,res) => {
+  if (session.apiKey) {
+    user = await database('users').where('apiKey', session.apiKey)
+    res.render('welcome.ejs', {
+      name: user[0].name
+    })
+  }
+  else {
+    res.status(404).redirect('404.html')
+  }
+})
 
-  router.get('/account', async (req,res) => {
-    if (session.apiKey) {
-      user = await database('users').where('apiKey', session.apiKey)
-      res.render('account.ejs', {
-        name: user[0].name,
-        email: user[0].email,
-        apiKey: user[0].apiKey
-      })
-    }
-  })
+router.get('/account', async (req,res) => {
+  if (session.apiKey) {
+    user = await database('users').where('apiKey', session.apiKey)
+    res.render('account.ejs', {
+      name: user[0].name,
+      email: user[0].email,
+      apiKey: user[0].apiKey
+    })
+  }
 })
 
 router.get('/foods', (req,res) => {
