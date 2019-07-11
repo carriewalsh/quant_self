@@ -17,6 +17,7 @@ const mealsRouter = require('./routes/api/v1/meals');
 const foodMealsRouter = require('./routes/api/v1/food_meals');
 var usersRouter = require('./routes/users')
 
+app.use(express.urlencoded())
 app.use(bodyParser.json())
 app.use('/', indexRouter);
 app.use('/api/v1/meals/:meal_id/foods', foodMealsRouter);
