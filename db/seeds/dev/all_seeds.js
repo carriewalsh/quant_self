@@ -1,31 +1,41 @@
-// const foodData = require('../../../data/food');
-// const mealData = require('../../../data/meal');
+let usersData = [
+  {
+    name: "Jennie Stones",
+    email: "jstones0@ted.com",
+    password: "password",
+    apiKey: "XUrJTVKh20s2"
+  },
+  {
+    name: "Ariana Kidds",
+    email: "akidds1@unc.edu",
+    password: "password",
+    apiKey: "ugHpafDoO3a2"
+  },
+  {
+    name: "Barry Eastbrook",
+    email: "beastbrook2@smugmug.com",
+    password: "password",
+    apiKey: "kcgF8gno38ru"
+  }
+]
 
 let foodData = [
-  {id: 1,
-    name: 'cheese',
+  {name: 'cheese',
     calories: 113},
-  {id: 2,
-    name: 'apple',
+  {name: 'apple',
     calories: 95},
-  {id: 3,
-    name: 'turkey',
+  {name: 'turkey',
     calories: 22},
-  {id: 4,
-    name: 'grapes',
+  {name: 'grapes',
     calories: 62},
-  {id: 5,
-    name: 'roll',
+  {name: 'roll',
     calories: 77},
-  {id: 6,
-    name: 'gushers',
+  {name: 'gushers',
     calories: 90},
-  {id: 7,
-    name: 'carrots',
+  {name: 'carrots',
     calories: 25},
-  {id: 8,
-    name: 'egg',
-    calories: 78}
+  {name: 'egg',
+    calories: 78},
 ]
 
 let foodMealData = [
@@ -58,17 +68,27 @@ let foodMealData = [
 ]
 
 let mealData = [
-  {id: 1,
-  name: 'breakfast'},
-  {id: 2,
-  name: 'lunch'},
-  {id: 3,
-  name: 'snack'},
-  {id: 4,
-  name: 'dinner'},
-  {id: 5,
-  name: 'dessert'}
-]
+  {name: 'breakfast',
+    user_id: 1},
+  {name: 'lunch',
+    user_id: 1},
+  {name: 'snack',
+    user_id: 2},
+  {name: 'dinner',
+    user_id: 3},
+  {name: 'dessert',
+    user_id: 3}
+  ]
+
+const createUser = (knex,user) => {
+  return knex('users').insert({
+    name: user.name,
+    email: user.email,
+    password: user.password,
+    apiKey: user.apiKey
+  })
+}
+
 
 const createFood = (knex,food) => {
   return knex('foods').insert({
@@ -86,7 +106,8 @@ const createFoodMeal = (knex,foodMeal) => {
 
 const createMeal = (knex,meal) => {
   return knex('meals').insert({
-    name: meal.name
+    name: meal.name,
+    user_id: meal.user_id
   })
 }
 var pry = require('pryjs');
@@ -96,10 +117,17 @@ exports.seed = function(knex) {
     .then(() => knex('foods').del())
     .then(() => {
       let promises = []
+      usersData.forEach(user => {
+        promises.push(createUser(knex, {
+          name: user.name,
+          email: user.email,
+          password: user.password,
+          apiKey: user.apiKey
+        }))
+      })
 
       foodData.forEach(food => {
         promises.push(createFood(knex,{
-          id: food.id,
           name: food.name,
           calories: food.calories
         }))
@@ -107,8 +135,8 @@ exports.seed = function(knex) {
 
       mealData.forEach(meal => {
         promises.push(createMeal(knex,{
-          id: meal.id,
-          name: meal.name
+          name: meal.name,
+          user_id: meal.user_id
         }))
       });
 
