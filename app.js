@@ -15,6 +15,7 @@ const indexRouter = require('./routes/index');
 const foodsRouter = require('./routes/api/v1/foods');
 const mealsRouter = require('./routes/api/v1/meals');
 const foodMealsRouter = require('./routes/api/v1/food_meals');
+const recipesRouter = require('./routes/api/v1/recipes');
 var usersRouter = require('./routes/users')
 
 app.use(express.urlencoded())
@@ -24,6 +25,7 @@ app.use('/api/v1/meals/:meal_id/foods', foodMealsRouter);
 app.use('/api/v1/foods', foodsRouter);
 app.use('/api/v1/meals', mealsRouter);
 app.use('/users', usersRouter);
+app.use('/api/v1/recipes', recipesRouter);
 
 // app.engine('html')
 app.use(express.static(path.join(__dirname + '/public')));
@@ -40,6 +42,7 @@ app.set('view engine', 'html');
 app.get('/my_foods', function(req, res, next) {
   res.send("message")
 });
+
 
 // app.get('/api/v1/foods', (req,res) => {
 //   database('foods').select()
