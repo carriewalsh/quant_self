@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Quantified Self</title>
+    <link rel="stylesheet" href="/styles.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=DM+Serif+Display&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="nav-bar" role="banner">
+      <a href="https://stormy-brushlands-92125.herokuapp.com/users/welcome" class="submit-button">Home</a>
+      <h1>Quantified Self API</h1>
+      <a href="https://stormy-brushlands-92125.herokuapp.com/users/logout" class="submit-button">Log Out</a>
+    </nav>
+    <section class="column-section">
+      <h2>Recipes Search</h2>
+      <section class="column-section">
+          <h3>search terms<%= search[0]['q'] %></h3>
+          <h3>min calories<%= search[0]['min_calories'] %></h3>
+          <h3>max calories<%= search[0]['max_calories'] %></h3>
+          <h3>health<%= search[0]['health'] %></h3>
+          <h3>diet<%= search[0]['diet'] %></h3>
+      </section>
+      <section class="row-section-wrap">
+        <% recipes.forEach(recipe => { %>
+            <%= recipe %>
+        <% }) %>
+
+      </section>
+
+      <section class="row-section-wrap">
+      </section>
+    </section>
+    <!-- <script type="text/javascript" src="../models/food.js">
+
+    </script> -->
+  </body>
+</html>
