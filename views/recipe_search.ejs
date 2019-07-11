@@ -14,7 +14,7 @@
     </nav>
     <!-- <form class="" action="https://stormy-brushlands-92125.herokuapp.com/users/recipe_search" method="post"> -->
     <form class="row-section" action="http://localhost:3000/users/recipe_search" method="post">
-    <div class="left-box padded">
+    <div class="left-box padded one-third">
       <label class="orange" for="q">Search terms:</label>
       <br>
       <input type="text" name="q" placeholder="chicken, tofu, lasagne..." required=true>
@@ -28,7 +28,7 @@
       <label class="orange" for="max_calories">Maximum:</label>
       <input type="number" name="max_calories" min="0" max="1000" value="1000">
     </div>
-    <div class="right-box padded">
+    <div class="right-box padded two-thirds">
       <label class="orange" for="health">Health options:</label>
       <br>
       <section class="row-section">
@@ -75,19 +75,22 @@
           <br>
           <input type="radio" class="radio" name="diet" value="high-protein">high-protein
           <br>
-          <input type="radio" class="radio" name="diet" value="high-fiber">high-fiber
-          <br>
+        </div>
+        <div class="row-section">
+          <div class="">
+            <input type="radio" class="radio" name="diet" value="high-fiber">high-fiber
+            <br>
+            <input type="radio" class="radio" name="diet" value="low-fat">low-fat
+            <br>
+          </div>
         </div>
         <div class="">
-          <input type="radio" class="radio" name="diet" value="low-fat">low-fat
-          <br>
           <input type="radio" class="radio" name="diet" value="low-carb">low-carb
           <br>
           <input type="radio" class="radio" name="diet" value="low-sodium">low-sodium
-          <br>
         </div>
       </section>
-      <input type="submit" name="" value="Find Recipes" class="submit-button">
+      <input type="submit" name="" value="Find Recipes" class="submit-button medium-button">
     </div>
     </form>
   </body>

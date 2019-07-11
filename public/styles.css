@@ -4,6 +4,7 @@ body {
   background-attachment: fixed;
   background-size: cover;
   font-family: 'DM Serif Display', serif;
+  font-size: 20px;
 }
 
 nav {
@@ -63,6 +64,15 @@ code {
   margin: 15px;
 }
 
+.row-section-wrap {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 15px;
+}
+
 .documentation, .user-view{
   display: flex;
   flex-direction: row;
@@ -86,21 +96,6 @@ code {
   width: 2px;
 }
 
-
-.orange-hover:hover {
-  background: #99301B;
-  color: #F5F5F5;
-  cursor:pointer;
-  transition: all .3s ease-in-out;
-}
-
-.lime-hover:hover {
-  background: #879F2D;
-  color: #F5F5F5;
-  cursor:pointer;
-  transition: all .3s ease-in-out;
-}
-
 .block {
   background: #F1F1F1;
   text-align: left;
@@ -120,14 +115,6 @@ code {
   padding: 40px 5%;
 }
 
-.flash {
-  background-color: #FFDBA0;
-  color: #C1521D;
-  font-size: 24px;
-  height: 35px;
-  text-align: center;
-}
-
 .left-box, .right-box {
   background: rgba(245,245,245,0.85);
   height: 250px;
@@ -137,16 +124,19 @@ code {
 
 .padded {
   padding: 15px;
-  height: 350px;
+  height: 420px;
 }
 
 .wide {
   width: 40%
 }
 
-.separated {
-  border-bottom: 2px solid grey;
-  border-top: 2px solid grey;
+.one-third {
+  width: 30%;
+}
+
+.two-thirds {
+  width: 60%;
 }
 
 p.green {
@@ -155,18 +145,53 @@ p.green {
   margin: 15px;
 }
 
-p.orange, label.orange {
+p.orange {
   color: #99301B;
   font-size: 20px;
   margin: 15px;
+}
+
+label.orange {
+  font-size: 30px;
 }
 
 h3.orange {
   color: #99301B;
 }
 
+.orange-background {
+  background: #FFDBA0;
+  padding: 15px;
+}
+.white-background {
+  background: #F5F5F5;
+  padding: 0px 15px;
+}
+
+.orange-hover:hover {
+  background: #99301B;
+  color: #F5F5F5;
+  cursor:pointer;
+  transition: all .3s ease-in-out;
+}
+
+.lime-hover:hover {
+  background: #879F2D;
+  color: #F5F5F5;
+  cursor:pointer;
+  transition: all .3s ease-in-out;
+}
+
 .screenshot {
   width: 95%;
+}
+
+.flash {
+  background-color: #FFDBA0;
+  color: #C1521D;
+  font-size: 24px;
+  height: 35px;
+  text-align: center;
 }
 
 
@@ -196,9 +221,12 @@ h3.orange {
 }
 
 .medium-button {
+  font-family: 'DM Serif Display', serif;
   font-size: 24px;
+  margin-top: 0px;
 }
 
 .medium-button:hover {
   font-size: 24px;
+  margin-top: 0px;
 }

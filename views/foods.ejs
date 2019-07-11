@@ -13,11 +13,12 @@
       <a href="http://localhost:3000/users/logout" class="submit-button">Log Out</a>
     </nav>
     <section class="column-section">
-      <h2>My Foods</h2>
-      <% foods.forEach(function(food) {%>
-        <p><%= food["name"] %> - calories: <%= food["calories"] %></p>
-      <%});%>
-      <a href="https://stormy-brushlands-92125.herokuapp.com/users/my_meals">TRY THIS LINK</a>
+      <h2>Foods</h2>
+      <section class="row-section-wrap">
+        <% foods.forEach(function(food) {%>
+          <h3 class="orange orange-background"><%= food["name"] %> - calories: <%= food["calories"] %></h3>
+          <%});%>
+      </section>
     </section>
     <!-- <script type="text/javascript" src="../models/food.js">
 
