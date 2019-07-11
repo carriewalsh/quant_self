@@ -286,6 +286,96 @@ response:
 }
 ```
 
+### GET `api/v1/recipes/food_search`
+
+request:
+```javascript
+ Content-Type: application/json
+ Accept: application/json
+
+ params:
+ {
+   q: 'food_name'
+ }
+```
+response:
+```javascript
+{"data":{"foodType":"chicken","recipes":[{"recipeName":"Chicken Vesuvio","calories":4230.305691201081,"recipeUrl":"http://www.seriouseats.com/recipes/2011/12/chicken-vesuvio-recipe.html","ingredientList":["1/2 cup olive oil","5 cloves garlic, peeled","2 large russet potatoes, peeled and cut into chunks","1 3-4 pound chicken, cut into 8 pieces (or 3 pound chicken legs)","3/4 cup white wine","3/4 cup chicken stock","3 tablespoons chopped parsley","1 tablespoon dried oregano","Salt and pepper","1 cup frozen peas, thawed"],"yield":4,"dietLabels":["Low-Carb"],"healthLabels":["Peanut-Free","Tree-Nut-Free"],"fatQuantity":{"label":"Fat","quantity":274.57692448260667,"unit":"g"},"carbQuantity":{"label":"Carbs","quantity":177.8427845163874,"unit":"g"},"sugarQuantity":{"label":"Sugars","quantity":16.29572988725985,"unit":"g"},"proteinQuantity":{"label":"Protein","quantity":230.99085117764236,"unit":"g"},"totalWeight":2972.9302457924105},{"recipeName":"Chicken Paprikash","calories":3033.2012500008163,"recipeUrl":"http://norecipes.com/recipe/chicken-paprikash/","ingredientList":["640 grams chicken - drumsticks and thighs ( 3 whole chicken legs cut apart)","1/2 teaspoon salt","1/4 teaspoon black pepper","1 tablespoon butter – cultured unsalted (or olive oil)","240 grams onion sliced thin (1 large onion)","70 grams Anaheim pepper chopped (1 large pepper)","25 grams paprika (about 1/4 cup)","1 cup chicken stock","1/2 teaspoon salt","1/2 cup sour cream","1 tablespoon flour – all-purpose"],"yield":4,"dietLabels":["Low-Carb"],"healthLabels":["Peanut-Free","Tree-Nut-Free","Alcohol-Free"],"fatQuantity":{"label":"Fat","quantity":208.05040250005803,"unit":"g"},"carbQuantity":{"label":"Carbs","quantity":47.816761250147486,"unit":"g"},"sugarQuantity":{"label":"Sugars","quantity":16.123463750047193,"unit":"g"},"proteinQuantity":{"label":"Protein","quantity":236.58131375005138,"unit":"g"},"totalWeight":1824.6125000003276}]}}
+```
+
+### GET `api/v1/recipes/calories_search`
+
+request:
+```javascript
+ Content-Type: application/json
+ Accept: application/json
+
+ params:
+ {
+   q: 'food_name'
+   calories: '500-700'
+ }
+```
+response:
+```javascript
+{"data":{"foodType":"chicken","recipes":[{"recipeName":"Chicken Vesuvio","calories":4230.305691201081,"recipeUrl":"http://www.seriouseats.com/recipes/2011/12/chicken-vesuvio-recipe.html","ingredientList":["1/2 cup olive oil","5 cloves garlic, peeled","2 large russet potatoes, peeled and cut into chunks","1 3-4 pound chicken, cut into 8 pieces (or 3 pound chicken legs)","3/4 cup white wine","3/4 cup chicken stock","3 tablespoons chopped parsley","1 tablespoon dried oregano","Salt and pepper","1 cup frozen peas, thawed"],"yield":4,"dietLabels":["Low-Carb"],"healthLabels":["Peanut-Free","Tree-Nut-Free"],"fatQuantity":{"label":"Fat","quantity":274.57692448260667,"unit":"g"},"carbQuantity":{"label":"Carbs","quantity":177.8427845163874,"unit":"g"},"sugarQuantity":{"label":"Sugars","quantity":16.29572988725985,"unit":"g"},"proteinQuantity":{"label":"Protein","quantity":230.99085117764236,"unit":"g"},"totalWeight":2972.9302457924105},{"recipeName":"Chicken Paprikash","calories":3033.2012500008163,"recipeUrl":"http://norecipes.com/recipe/chicken-paprikash/","ingredientList":["640 grams chicken - drumsticks and thighs ( 3 whole chicken legs cut apart)","1/2 teaspoon salt","1/4 teaspoon black pepper","1 tablespoon butter – cultured unsalted (or olive oil)","240 grams onion sliced thin (1 large onion)","70 grams Anaheim pepper chopped (1 large pepper)","25 grams paprika (about 1/4 cup)","1 cup chicken stock","1/2 teaspoon salt","1/2 cup sour cream","1 tablespoon flour – all-purpose"],"yield":4,"dietLabels":["Low-Carb"],"healthLabels":["Peanut-Free","Tree-Nut-Free","Alcohol-Free"],"fatQuantity":{"label":"Fat","quantity":208.05040250005803,"unit":"g"},"carbQuantity":{"label":"Carbs","quantity":47.816761250147486,"unit":"g"},"sugarQuantity":{"label":"Sugars","quantity":16.123463750047193,"unit":"g"},"proteinQuantity":{"label":"Protein","quantity":236.58131375005138,"unit":"g"},"totalWeight":1824.6125000003276}]}}
+```
+
+### GET `api/v1/recipes/ingredient_search`
+
+request:
+```javascript
+ Content-Type: application/json
+ Accept: application/json
+
+ params:
+ {
+   q: 'food_name'
+   ingr: '2-5'
+ }
+```
+response:
+```javascript
+{"data":{"foodType":"chicken","recipes":[{"recipeName":"Chicken Vesuvio","calories":4230.305691201081,"recipeUrl":"http://www.seriouseats.com/recipes/2011/12/chicken-vesuvio-recipe.html","ingredientList":["1/2 cup olive oil","5 cloves garlic, peeled","2 large russet potatoes, peeled and cut into chunks","1 3-4 pound chicken, cut into 8 pieces (or 3 pound chicken legs)","3/4 cup white wine","3/4 cup chicken stock","3 tablespoons chopped parsley","1 tablespoon dried oregano","Salt and pepper","1 cup frozen peas, thawed"],"yield":4,"dietLabels":["Low-Carb"],"healthLabels":["Peanut-Free","Tree-Nut-Free"],"fatQuantity":{"label":"Fat","quantity":274.57692448260667,"unit":"g"},"carbQuantity":{"label":"Carbs","quantity":177.8427845163874,"unit":"g"},"sugarQuantity":{"label":"Sugars","quantity":16.29572988725985,"unit":"g"},"proteinQuantity":{"label":"Protein","quantity":230.99085117764236,"unit":"g"},"totalWeight":2972.9302457924105},{"recipeName":"Chicken Paprikash","calories":3033.2012500008163,"recipeUrl":"http://norecipes.com/recipe/chicken-paprikash/","ingredientList":["640 grams chicken - drumsticks and thighs ( 3 whole chicken legs cut apart)","1/2 teaspoon salt","1/4 teaspoon black pepper","1 tablespoon butter – cultured unsalted (or olive oil)","240 grams onion sliced thin (1 large onion)","70 grams Anaheim pepper chopped (1 large pepper)","25 grams paprika (about 1/4 cup)","1 cup chicken stock","1/2 teaspoon salt","1/2 cup sour cream","1 tablespoon flour – all-purpose"],"yield":4,"dietLabels":["Low-Carb"],"healthLabels":["Peanut-Free","Tree-Nut-Free","Alcohol-Free"],"fatQuantity":{"label":"Fat","quantity":208.05040250005803,"unit":"g"},"carbQuantity":{"label":"Carbs","quantity":47.816761250147486,"unit":"g"},"sugarQuantity":{"label":"Sugars","quantity":16.123463750047193,"unit":"g"},"proteinQuantity":{"label":"Protein","quantity":236.58131375005138,"unit":"g"},"totalWeight":1824.6125000003276}]}}
+```
+
+### GET `api/v1/recipes/health_search`
+
+request:
+```javascript
+ Content-Type: application/json
+ Accept: application/json
+
+ params:
+ {
+   q: 'food_name'
+   health: 'peanut-free'
+ }
+```
+response:
+```javascript
+{"data":{"foodType":"chicken","recipes":[{"recipeName":"Chicken Vesuvio","calories":4230.305691201081,"recipeUrl":"http://www.seriouseats.com/recipes/2011/12/chicken-vesuvio-recipe.html","ingredientList":["1/2 cup olive oil","5 cloves garlic, peeled","2 large russet potatoes, peeled and cut into chunks","1 3-4 pound chicken, cut into 8 pieces (or 3 pound chicken legs)","3/4 cup white wine","3/4 cup chicken stock","3 tablespoons chopped parsley","1 tablespoon dried oregano","Salt and pepper","1 cup frozen peas, thawed"],"yield":4,"dietLabels":["Low-Carb"],"healthLabels":["Peanut-Free","Tree-Nut-Free"],"fatQuantity":{"label":"Fat","quantity":274.57692448260667,"unit":"g"},"carbQuantity":{"label":"Carbs","quantity":177.8427845163874,"unit":"g"},"sugarQuantity":{"label":"Sugars","quantity":16.29572988725985,"unit":"g"},"proteinQuantity":{"label":"Protein","quantity":230.99085117764236,"unit":"g"},"totalWeight":2972.9302457924105},{"recipeName":"Chicken Paprikash","calories":3033.2012500008163,"recipeUrl":"http://norecipes.com/recipe/chicken-paprikash/","ingredientList":["640 grams chicken - drumsticks and thighs ( 3 whole chicken legs cut apart)","1/2 teaspoon salt","1/4 teaspoon black pepper","1 tablespoon butter – cultured unsalted (or olive oil)","240 grams onion sliced thin (1 large onion)","70 grams Anaheim pepper chopped (1 large pepper)","25 grams paprika (about 1/4 cup)","1 cup chicken stock","1/2 teaspoon salt","1/2 cup sour cream","1 tablespoon flour – all-purpose"],"yield":4,"dietLabels":["Low-Carb"],"healthLabels":["Peanut-Free","Tree-Nut-Free","Alcohol-Free"],"fatQuantity":{"label":"Fat","quantity":208.05040250005803,"unit":"g"},"carbQuantity":{"label":"Carbs","quantity":47.816761250147486,"unit":"g"},"sugarQuantity":{"label":"Sugars","quantity":16.123463750047193,"unit":"g"},"proteinQuantity":{"label":"Protein","quantity":236.58131375005138,"unit":"g"},"totalWeight":1824.6125000003276}]}}
+```
+
+### GET `api/v1/recipes/diet_search`
+
+request:
+```javascript
+ Content-Type: application/json
+ Accept: application/json
+
+ params:
+ {
+   q: 'food_name'
+   diet: 'low-carb'
+ }
+```
+response:
+```javascript
+{"data":{"foodType":"chicken","recipes":[{"recipeName":"Chicken Vesuvio","calories":4230.305691201081,"recipeUrl":"http://www.seriouseats.com/recipes/2011/12/chicken-vesuvio-recipe.html","ingredientList":["1/2 cup olive oil","5 cloves garlic, peeled","2 large russet potatoes, peeled and cut into chunks","1 3-4 pound chicken, cut into 8 pieces (or 3 pound chicken legs)","3/4 cup white wine","3/4 cup chicken stock","3 tablespoons chopped parsley","1 tablespoon dried oregano","Salt and pepper","1 cup frozen peas, thawed"],"yield":4,"dietLabels":["Low-Carb"],"healthLabels":["Peanut-Free","Tree-Nut-Free"],"fatQuantity":{"label":"Fat","quantity":274.57692448260667,"unit":"g"},"carbQuantity":{"label":"Carbs","quantity":177.8427845163874,"unit":"g"},"sugarQuantity":{"label":"Sugars","quantity":16.29572988725985,"unit":"g"},"proteinQuantity":{"label":"Protein","quantity":230.99085117764236,"unit":"g"},"totalWeight":2972.9302457924105},{"recipeName":"Chicken Paprikash","calories":3033.2012500008163,"recipeUrl":"http://norecipes.com/recipe/chicken-paprikash/","ingredientList":["640 grams chicken - drumsticks and thighs ( 3 whole chicken legs cut apart)","1/2 teaspoon salt","1/4 teaspoon black pepper","1 tablespoon butter – cultured unsalted (or olive oil)","240 grams onion sliced thin (1 large onion)","70 grams Anaheim pepper chopped (1 large pepper)","25 grams paprika (about 1/4 cup)","1 cup chicken stock","1/2 teaspoon salt","1/2 cup sour cream","1 tablespoon flour – all-purpose"],"yield":4,"dietLabels":["Low-Carb"],"healthLabels":["Peanut-Free","Tree-Nut-Free","Alcohol-Free"],"fatQuantity":{"label":"Fat","quantity":208.05040250005803,"unit":"g"},"carbQuantity":{"label":"Carbs","quantity":47.816761250147486,"unit":"g"},"sugarQuantity":{"label":"Sugars","quantity":16.123463750047193,"unit":"g"},"proteinQuantity":{"label":"Protein","quantity":236.58131375005138,"unit":"g"},"totalWeight":1824.6125000003276}]}}
+```
+
+
 
 ## Getting Started
 
