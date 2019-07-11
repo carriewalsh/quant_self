@@ -105,8 +105,35 @@ router.get('/recipe_search', (req,res) => {
 })
 
 router.post('/recipe_search', (req,res) => {
-  // fetch call to microservice
-})
+  const q = req.body.q
+  const min_calories = req.body.min_calories
+  const max_calories = req.body.max_calories
+  const health = req.body.health
+  const diet = req.body.diet
+  const search = {
+    q: req.body.q,
+    min_calories: req.body.min_calories,
+    max_calories: req.body.max_calories,
+    health: req.body.health,
+    diet: req.body.diet,
+  }
+  fetch(`http://localhost:3001/api/v1/recipes?q=${req.body.q}&calories=${min_calories},${max_calories}&health=${health}&diet=${diet}`)
+  // fetch(`https://qe-microservice.herokuapp.com/api/v1/recipes?q=${req.body.q}&calories=${min_calories},${max_calories}&health=${health}&diet=${diet}`)
+    .then(response => {
+      if (response.ok) {
+        return response.json();}
+        throw new Error('Request Failed.');},
+        networkError => console.log(networkError.message))
+    .then(recipes => {
+      res.render('recipes.ejs', {
+        recipes: recipes,
+        search: search
+      })
+    })
+    .catch((error) => {
+      console.log(error)
+    })
+  })
 
 router.get('/recipes', (req,res) => {
   // show results from microservice
