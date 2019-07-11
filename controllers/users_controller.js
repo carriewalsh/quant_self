@@ -106,7 +106,8 @@ async function foods(req,res) {
       })
 }
 async function my_meals(req,res) {
-  fetch('https://stormy-brushlands-92125.herokuapp.com/api/v1/meals')
+  // fetch('https://stormy-brushlands-92125.herokuapp.com/api/v1/meals?apiKey=${session.apiKey}', {
+  fetch(`http://localhost:3000/api/v1/meals?apiKey=${session.apiKey}`)
   .then(response => {
     if (response.ok) {
       return response.json();}

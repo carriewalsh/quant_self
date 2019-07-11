@@ -8,12 +8,13 @@ const Food = require('../../../models/food');
 // const Meal = require('../../../models/meal');
 const pry = require('pryjs')
 var mealsController = require('../../../controllers/api/v1/meals_controller')
+var session = require('../../../models/POJOs/session')
 
 const { Model } = require('objection');
 Model.knex(database)
 
 router.get('/', async (req,res) => {
-  // if (req.body.apiKey) {
+  if (req.query.apiKey) {
     // const users = await database.select('apiKey').from('users')
     // const apis = []
     // users.forEach(user => {
@@ -27,12 +28,12 @@ router.get('/', async (req,res) => {
         // error: "Unauthorized"
       // })
     // }
-  // }
-  // else {
-  //   res.status(401).json({
-  //     error: "Unauthorized"
-  //   })
-  // }
+  }
+  else {
+    res.status(401).json({
+      error: "Unauthorized"
+    })
+  }
 })
 
 module.exports = router;
