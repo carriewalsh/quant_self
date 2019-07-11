@@ -11,6 +11,8 @@ The frontend of the site allows the user to log in and see all their saved meals
 
 The main site provides the API and front end whereas the microservice is the middleman between the Edamam API and the main site.
 
+Future functionality will allow users to create foods and create meals.
+
 
 ## Endpoints
 
@@ -404,6 +406,12 @@ $ psql
 
 `$ npx knex seed:run`
 
+### Testing
+
+This app uses JEST for testing:
+
+`$ npm test`
+
 ## Schema
 
 ![Quantified Self Schema](/schema.png?raw=true "Quantified Self Schema")
@@ -415,6 +423,7 @@ At the time of this project, we are halfway through our last Mod at Turing Schoo
 Carrie Walsh:
 - https://github.com/carriewalsh
 - https://alumni.turing.io/alumni/carrie-walsh
+
 Ethan Grab:
 - https://github.com/Stoovles/
 - https://alumni.turing.io/alumni/ethan-grab
