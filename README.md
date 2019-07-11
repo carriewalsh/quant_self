@@ -2,7 +2,8 @@
 by Carrie Walsh & Ethan Grab
 
 Deployed site: https://stormy-brushlands-92125.herokuapp.com/
-Microservice site:
+Deployed Microservice site: https://qe-microservice.herokuapp.com/
+Microservice Github Repository: https://github.com/Stoovles/quant_self_microservice
 
 This pair project is our second working with JavaScript and Express to build an API. The API stores data about foods and meals for users that can register, sign in, and are given an API key.
 
