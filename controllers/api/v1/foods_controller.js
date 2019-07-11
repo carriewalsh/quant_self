@@ -81,13 +81,13 @@ async function destroy(req,res) {
     const deletedFood = await Food.query()
     .findById(req.params.id)
     if (deletedFood) {
-      // await FoodMeal.query().delete().where({
-      //   food_id: req.params.id
-      // })
+      await FoodMeal.query().delete().where({
+        food_id: req.params.id
+      })
       await Food.query().findById(req.params.id).delete()
-      res.send(JSON.stringify({
+      res.json({
         "message": `${deletedFood.name} has been deleted.`
-      }))
+      })
     }
     else {
       res.status(404).json({
@@ -95,7 +95,6 @@ async function destroy(req,res) {
       })
     }
   } catch (error) {
-      eval(pry.it)
       res.status(404).json({ error });
     };
 }

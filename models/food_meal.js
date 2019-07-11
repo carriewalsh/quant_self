@@ -6,7 +6,7 @@ Model.knex(knexConnection)
 
 class FoodMeal extends Model {
   static get tableName () {
-    return 'meal_foods'
+    return 'food_meals'
   }
   static get relationMappings () {
     const Food = require('./food')

@@ -11,6 +11,7 @@ var session = require('../../../models/POJOs/session')
 
 async function index(request,response) {
   try {
+    session.setKey(request.query.apiKey)
     const id = await database.select('id').from('users').where('apiKey',session.apiKey)
     const meals = await Meal
       .query().where('user_id',id[0]["id"])
