@@ -6,7 +6,8 @@ const configuration = require("../../../knexfile")[environment];
 const database = require("knex")(configuration);
 const pry = require('pryjs')
 var request = require('request');
-const urlMicroService = 'https://qe-microservice.herokuapp.com/api/v1/recipes?'
+// const urlMicroService = 'https://qe-microservice.herokuapp.com/api/v1/recipes?'
+const urlMicroService = 'http://localhost:3001/api/v1/recipes?'
 
 
 // function edamamRequest(error, response, body) {
@@ -36,7 +37,7 @@ router.get('/calories_search', async (req,res) => {
       } else if(response && body) {
           console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
           // var json = JSON.stringify(body)
-          res.send( JSON.parse(body) ); // Print JSON response.
+          res.send( body ); // Print JSON response.
       }
   })
 })
@@ -56,7 +57,7 @@ router.get('/ingredient_search', async (req,res) => {
       } else if(response && body) {
           console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
           // var json = JSON.stringify(body)
-          res.send( JSON.parse(body) ); // Print JSON response.
+          res.send( body ); // Print JSON response.
       }
   })
 })
@@ -76,7 +77,7 @@ router.get('/health_search', async (req,res) => {
       } else if(response && body) {
           console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
           // var json = JSON.stringify(body)
-          res.send( JSON.parse(body) ); // Print JSON response.
+          res.send( body ); // Print JSON response.
       }
   })
 })
@@ -96,7 +97,7 @@ router.get('/diet_search', async (req,res) => {
       } else if(response && body) {
           console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
           // var json = JSON.stringify(body)
-          res.send( JSON.parse(body) ); // Print JSON response.
+          res.send( body ); // Print JSON response.
       }
   })
 })
@@ -115,7 +116,7 @@ router.get('/food_search', function (req, res) {
         } else if(response && body) {
             console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
             // var json = JSON.stringify(body)
-            res.send( JSON.parse(body) ); // Print JSON response.
+            res.send( body ); // Print JSON response.
         }
     })
 })
