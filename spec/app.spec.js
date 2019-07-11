@@ -63,7 +63,7 @@ describe('api', () => {
   })
 
   describe('DELETE /api/v1/foods/:id', () => {
-    xtest('It should delete a food', () => {
+    test('It should delete a food', () => {
       return request(app).delete('/api/v1/foods/1').then(response => {
         expect(response.statusCode).toBe(200)
         console.log(response.error)
@@ -95,18 +95,17 @@ describe('api', () => {
   describe('POST /api/v1/meals/:meal_id/foods/:id', () => {
     test('it should add food to a meal', () => {
       return request(app).post('/api/v1/meals/1/foods/1').then(response => {
-        expect(response.statusCode).toBe(200)
-        // next test should change with route message change
+        expect(response.statusCode).toBe(201)
         expect(response.text).toEqual("message: Successfully added cheese to breakfast")
       })
     })
   })
 
   describe('DELETE /api/v1/meals/:meal_id/foods/:id', () => {
-    xftest('it should delete food_meal associated with meal', () => {
+    test('it should delete food_meal associated with meal', () => {
       return request(app).delete('/api/v1/meals/1/foods/2').then(response => {
         expect(response.statusCode).toBe(200)
-        console.log(response.body)
+        expect(response.text).toEqual('message: Successfully unrelated')
       })
     })
   })
@@ -213,20 +212,20 @@ describe('api', () => {
 //     })
 //   })
 //
-//   describe('GET /api/v1/meals', () => {
-//     test('it should return all meals with their foods', () => {
-//       return request(app).get('/api/v1/meals').send({api_key: "1234"}).then(response => {
-//         expect(response.statusCode).toBe(200)
-//         expect(response.body[0]["id"]).toEqual(1)
-//         expect(response.body[0]["foods"].length).toEqual(3)
-//       })
-//     })
-//     test('it should return 401 without api_key', () => {
-//       return request(app).get('/api/v1/meals').send({api_key: "1234"}).then(response => {
-//         expect(response.statusCode).toBe(401)
-//       })
-//     })
-//   })
+  // describe('GET /api/v1/meals', () => {
+  //   test('it should return all meals with their foods', () => {
+  //     return request(app).get('/api/v1/meals').then(response => {
+  //       expect(response.statusCode).toBe(200)
+  //       expect(response.body[0]["id"]).toEqual(1)
+  //       expect(response.body[0]["foods"].length).toEqual(3)
+  //     })
+  //   })
+  //   test('it should return 401 without api_key', () => {
+  //     return request(app).get('/api/v1/meals').send({api_key: "1234"}).then(response => {
+  //       expect(response.statusCode).toBe(401)
+  //     })
+  //   })
+  // })
 //
 //   describe('GET /api/v1/meals/:meal_id/foods', () => {
 //     test('it should return specific meal with its foods', () => {
