@@ -10,7 +10,6 @@ class Meal extends Model {
   }
   static get relationMappings () {
     const Food = require('./food')
-    const User = require('./user')
 
     return {
       foods: {
@@ -23,14 +22,6 @@ class Meal extends Model {
             to: 'food_meals.food_id'
           },
           to: 'foods.id'
-        }
-      },
-
-      users: {
-        relation: Model.BelongsToOneRelation,
-        join: {
-          from: 'meals.user_id',
-          to: 'users.id'
         }
       }
     }
