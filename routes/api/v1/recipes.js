@@ -6,7 +6,7 @@ const configuration = require("../../../knexfile")[environment];
 const database = require("knex")(configuration);
 const pry = require('pryjs')
 var request = require('request');
-const urlMicroService = 'http://localhost:3001/api/v1/recipes?'
+const urlMicroService = 'https://qe-microservice.herokuapp.com/api/v1/recipes?'
 
 
 // function edamamRequest(error, response, body) {
