@@ -39,12 +39,16 @@ input {
   width: 200px;
 }
 
+code {
+  font-size: 15px;
+}
+
 .radio {
   width: 12px;
 }
 
 .column-section {
-  background: rgba(245,245,245,0.85);
+  background: rgba(245,245,245,0.75);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -64,13 +68,24 @@ input {
   flex-direction: row;
   justify-content: space-around;
   width: 100%;
+}
 
+.user-view-block {
+  margin: 0px 15px;
 }
 
 .foods, .meals {
   text-align: center;
   width: 95%;
 }
+
+.midline {
+  background: grey;
+  font-size: 1px;
+  height: 100%
+  width: 2px;
+}
+
 
 .orange-hover:hover {
   background: #99301B;
@@ -89,7 +104,9 @@ input {
 .block {
   background: #F1F1F1;
   text-align: left;
-  margin-left: 15px;
+  margin-left: 20px;
+  margin-right: 20px;
+
 }
 
 .login-box {
@@ -133,6 +150,10 @@ p.orange, label.orange {
   color: #99301B;
   font-size: 20px;
   margin: 15px;
+}
+
+.screenshot {
+  width: 95%;
 }
 
 
