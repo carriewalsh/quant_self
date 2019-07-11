@@ -8,16 +8,16 @@
   </head>
   <body>
     <nav class="nav-bar" role="banner">
-      <a href="http://localhost:3000/users/welcome" class="submit-button">Home</a>
+      <a href="https://stormy-brushlands-92125.herokuapp.com/users/welcome" class="submit-button">Home</a>
       <h1>Quantified Self API</h1>
-      <a href="http://localhost:3000/users/logout" class="submit-button">Log Out</a>
+      <a href="https://stormy-brushlands-92125.herokuapp.com/users/logout" class="submit-button">Log Out</a>
     </nav>
     <section class="column-section">
       <h2>My Meals</h2>
       <% if (meals) {%>
         <% meals.forEach(function(meal) {%>
           <div class="row-section wide white-background">
-            <h2><a href="http://localhost:3000/users/my_meals/<%= meal.id %>/foods" class="submit-button medium-button"><%= meal["name"] %></a></h2>
+            <h2><a href="https://stormy-brushlands-92125.herokuapp.com/users/my_meals/<%= meal.id %>/foods" class="submit-button medium-button"><%= meal["name"] %></a></h2>
             <h3 class="orange">Total Calories: <%= totalCalories[meal.id] %></h3>
           </div>
           <hr>
