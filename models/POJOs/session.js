@@ -12,5 +12,6 @@ class Session {
   }
 }
 
+var session = new Session
 
-module.exports = Session;
+module.exports = session;

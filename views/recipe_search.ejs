@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Quantified Self</title>
+    <link rel="stylesheet" href="/styles.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=DM+Serif+Display&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="nav-bar" role="banner">
+      <a href="https://stormy-brushlands-92125.herokuapp.com/users/welcome" class="submit-button">Home</a>
+      <h1>Quantified Self API</h1>
+      <a href="https://stormy-brushlands-92125.herokuapp.com/users/logout" class="submit-button">Log Out</a>
+    </nav>
+    <!-- <form class="" action="https://stormy-brushlands-92125.herokuapp.com/users/recipe_search" method="post"> -->
+    <form class="row-section" action="https://stormy-brushlands-92125.herokuapp.com/users/recipe_search" method="post">
+    <div class="left-box padded one-third">
+      <label class="orange" for="q">Search terms:</label>
+      <br>
+      <input type="text" name="q" placeholder="chicken, tofu, lasagne..." required=true>
+      <br>
+      <br>
+      <label class="orange" for="calories">Calorie range:</label>
+      <br>
+      <label class="orange" for="min_calories">Minimum:</label>
+      <input type="number" name="min_calories" min="0" max="1000" value="0">
+      <br>
+      <label class="orange" for="max_calories">Maximum:</label>
+      <input type="number" name="max_calories" min="0" max="1000" value="1000">
+    </div>
+    <div class="right-box padded two-thirds">
+      <label class="orange" for="health">Health options:</label>
+      <br>
+      <section class="row-section">
+        <div class="">
+          <input type="radio" class="radio" name="health" value="vegan">vegan
+          <br>
+          <input type="radio" class="radio" name="health" value="vegetarian">vegetarian
+          <br>
+          <input type="radio" class="radio" name="health" value="paleo">paleo
+          <br>
+          <input type="radio" class="radio" name="health" value="dairy-free">dairy-free
+          <br>
+          <input type="radio" class="radio" name="health" value="gluten-free">gluten-free
+          <br>
+        </div>
+        <div class="">
+          <input type="radio" class="radio" name="health" value="wheat-free">wheat-free
+          <br>
+          <input type="radio" class="radio" name="health" value="fat-free">fat-free
+          <br>
+          <input type="radio" class="radio" name="health" value="low-sugar">low-sugar
+          <br>
+          <input type="radio" class="radio" name="health" value="egg-free">egg-free
+          <br>
+          <input type="radio" class="radio" name="health" value="peanut-free">peanut-free
+          <br>
+        </div>
+        <div class="">
+          <input type="radio" class="radio" name="health" value="tree-nut-free">tree-nut-free
+          <br>
+          <input type="radio" class="radio" name="health" value="soy-free">soy-free
+          <br>
+          <input type="radio" class="radio" name="health" value="fish-free">fish-free
+          <br>
+          <input type="radio" class="radio" name="health" value="shellfish-free">shellfish-free
+          <br>
+        </div>
+      </section>
+      <label class="orange" for="diet">Diet options:</label>
+      <br>
+      <section class="row-section">
+        <div class="">
+          <input type="radio" class="radio" name="diet" value="balanced">balanced
+          <br>
+          <input type="radio" class="radio" name="diet" value="high-protein">high-protein
+          <br>
+        </div>
+        <div class="row-section">
+          <div class="">
+            <input type="radio" class="radio" name="diet" value="high-fiber">high-fiber
+            <br>
+            <input type="radio" class="radio" name="diet" value="low-fat">low-fat
+            <br>
+          </div>
+        </div>
+        <div class="">
+          <input type="radio" class="radio" name="diet" value="low-carb">low-carb
+          <br>
+          <input type="radio" class="radio" name="diet" value="low-sodium">low-sodium
+        </div>
+      </section>
+      <input type="submit" name="" value="Find Recipes" class="submit-button medium-button">
+    </div>
+    </form>
+  </body>
+</html>

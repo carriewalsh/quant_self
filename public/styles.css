@@ -4,6 +4,7 @@ body {
   background-attachment: fixed;
   background-size: cover;
   font-family: 'DM Serif Display', serif;
+  font-size: 20px;
 }
 
 nav {
@@ -12,7 +13,7 @@ nav {
   display: flex;
   letter-spacing: 2.5px;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   font-size: 45px;
   height: 100px;
   margin-top: 0px;
@@ -39,11 +40,36 @@ input {
   width: 200px;
 }
 
-.big-section {
-  background: rgba(245,245,245,0.85);
+code {
+  font-size: 15px;
+}
+
+.radio {
+  width: 12px;
+}
+
+.column-section {
+  background: rgba(245,245,245,0.75);
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 15px;
+}
+
+.row-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin: 15px;
+}
+
+.row-section-wrap {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
   margin: 15px;
 }
 
@@ -52,12 +78,94 @@ input {
   flex-direction: row;
   justify-content: space-around;
   width: 100%;
+}
 
+.user-view-block {
+  margin: 0px 15px;
 }
 
 .foods, .meals {
   text-align: center;
   width: 95%;
+}
+
+.midline {
+  background: grey;
+  font-size: 1px;
+  height: 100%
+  width: 2px;
+}
+
+.block {
+  background: #F1F1F1;
+  text-align: left;
+  margin-left: 20px;
+  margin-right: 20px;
+
+}
+
+.login-box {
+  background: rgba(245,245,245,0.85);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 35px;
+  margin: 15px 30%;
+  padding: 40px 5%;
+}
+
+.left-box, .right-box {
+  background: rgba(245,245,245,0.85);
+  height: 250px;
+  text-align: center;
+  width: 45%;
+}
+
+.padded {
+  padding: 15px;
+  height: 420px;
+}
+
+.wide {
+  width: 40%
+}
+
+.one-third {
+  width: 30%;
+}
+
+.two-thirds {
+  width: 60%;
+}
+
+p.green {
+  color: #879F2D;
+  font-size: 20px;
+  margin: 15px;
+}
+
+p.orange {
+  color: #99301B;
+  font-size: 20px;
+  margin: 15px;
+}
+
+label.orange {
+  font-size: 30px;
+}
+
+h3.orange {
+  color: #99301B;
+}
+
+.orange-background {
+  background: #FFDBA0;
+  padding: 15px;
+}
+.white-background {
+  background: #F5F5F5;
+  padding: 0px 15px;
 }
 
 .orange-hover:hover {
@@ -74,22 +182,18 @@ input {
   transition: all .3s ease-in-out;
 }
 
-.block {
-  background: #F1F1F1;
-  text-align: left;
-  margin-left: 15px;
+.screenshot {
+  width: 95%;
 }
 
-.login-box {
-  background: rgba(245,245,245,0.85);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-size: 35px;
-  margin: 15px 320px;
-  padding: 40px 200px;
+.flash {
+  background-color: #FFDBA0;
+  color: #C1521D;
+  font-size: 24px;
+  height: 35px;
+  text-align: center;
 }
+
 
 .submit-button {
   background-color: #133512;
@@ -100,6 +204,7 @@ input {
   margin-top: 20px;
   padding: 5px 15px;
   text-align: center;
+  text-decoration: none;
 }
 
 .submit-button:hover {
@@ -112,4 +217,16 @@ input {
   padding: 5px 15px;
   text-align: center;
   cursor:pointer;
+  transition: all .2s ease-in-out;
+}
+
+.medium-button {
+  font-family: 'DM Serif Display', serif;
+  font-size: 24px;
+  margin-top: 0px;
+}
+
+.medium-button:hover {
+  font-size: 24px;
+  margin-top: 0px;
 }

@@ -12,23 +12,83 @@ const { Model } = require('objection');
 Model.knex(database)
 
 router.get('/', async (req,res) => {
-  foodsController.index(req,res)
+  // const users = await database.select('apiKey').from('users')
+  // const apis = []
+  // users.forEach(user => {
+    // apis.push(user['apiKey'])
+  // })
+  // if (apis.includes(req.body.apiKey)) {
+    foodsController.index(req,res)
+  // }
+  // else {
+    // res.status(401).json({
+      // error: "Unauthorized"
+    // })
+  // }
 })
 
 router.get('/:id', async (req,res) => {
-  foodsController.show(req,res)
+  // const users = await database.select('apiKey').from('users')
+  // const apis = []
+  // users.forEach(user => {
+    // apis.push(user['apiKey'])
+  // })
+  // if (apis.includes(req.body.apiKey)) {
+    foodsController.show(req,res)
+  // }
+  // else {
+    // res.status(401).json({
+      // error: "Unauthorized"
+    // })
+  // }
 })
 
 router.post('/', async (req,res) => {
-  foodsController.create(req,res)
+  // const users = await database.select('apiKey').from('users')
+  // const apis = []
+  // users.forEach(user => {
+    // apis.push(user['apiKey'])
+  // })
+  // if (apis.includes(req.body.apiKey)) {
+    foodsController.create(req,res)
+  // }
+  // else {
+    // res.status(401).json({
+      // error: "Unauthorized"
+    // })
+  // }
 })
 
 router.patch('/:id', async (req,res) => {
-  foodsController.update(req,res)
+  // const users = await database.select('apiKey').from('users')
+  // const apis = []
+  // users.forEach(user => {
+    // apis.push(user['apiKey'])
+  // })
+  // if (apis.includes(req.body.apiKey)) {
+    foodsController.update(req,res)
+  // }
+  // else {
+    // res.status(401).json({
+      // error: "Unauthorized"
+    // })
+  // }
 })
 
 router.delete('/:id', async (req,res) => {
-  foodsController.destroy(req,res)
+  // const users = await database.select('apiKey').from('users')
+  // const apis = []
+  // users.forEach(user => {
+    // apis.push(user['apiKey'])
+  // })
+  // if (apis.includes(req.body.apiKey)) {
+    foodsController.destroy(req,res)
+  // }
+  // else {
+    // res.status(401).json({
+      // error: "Unauthorized"
+    // })
+  // }
 })
 
 module.exports = router;

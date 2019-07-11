@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Quantified Self</title>
+    <link rel="stylesheet" href="/styles.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=DM+Serif+Display&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="nav-bar" role="banner">
+      <a href="https://stormy-brushlands-92125.herokuapp.com/users/welcome" class="submit-button">Home</a>
+      <h1>Quantified Self API</h1>
+      <a href="https://stormy-brushlands-92125.herokuapp.com/users/logout" class="submit-button">Log Out</a>
+    </nav>
+    <div class="login-box">
+      <section class="row-section">
+        <p class="orange">Name: </p>
+        <p class="green"><%= name %></p>
+      </section>
+      <section class="row-section">
+        <p class="orange">Email address: </p>
+        <p class="green"><%= email %></p>
+      </section>
+      <section class="row-section">
+        <p class="orange">API key: </p>
+        <p class="green"><%= apiKey %></p>
+      </section>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Quantified Self</title>
+    <link rel="stylesheet" href="/styles.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=DM+Serif+Display&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="nav-bar" role="banner">
+      <a href="https://stormy-brushlands-92125.herokuapp.com/users/welcome" class="submit-button">Home</a>
+      <h1>Quantified Self API</h1>
+      <a href="https://stormy-brushlands-92125.herokuapp.com/users/logout" class="submit-button">Log Out</a>
+    </nav>
+    <section class="column-section">
+      <h2>Foods</h2>
+      <section class="row-section-wrap">
+        <% foods.forEach(function(food) {%>
+          <h3 class="orange orange-background"><%= food["name"] %> - calories: <%= food["calories"] %></h3>
+          <%});%>
+      </section>
+    </section>
+    <!-- <script type="text/javascript" src="../models/food.js">
+
+    </script> -->
+  </body>
+</html>

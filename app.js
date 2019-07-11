@@ -39,7 +39,7 @@ app.set('views', __dirname + '/views');
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 
-app.get('/my_foods', function(req, res, next) {
+app.get('/foods', function(req, res, next) {
   res.send("message")
 });
 
