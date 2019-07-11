@@ -5,31 +5,32 @@
     <title>Quantified Self</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css?family=DM+Serif+Display&display=swap" rel="stylesheet">
+
   </head>
   <body>
     <nav class="nav-bar" role="banner">
       <h1>Quantified Self API</h1>
     </nav>
-    <section class="big-section">
+    <section class="column-section">
       <h2 class="orange-hover">Documentation</h2>
       <div class="documentation">
         <div class="foods">
-          <h3 class="orange-hover">Foods Endpoints</h3>
+          <h2 class="orange-hover">Foods Endpoints</h2>
           <div class="endpoints">
-            <h4 class="lime-hover">GET /api/v1/foods</h4>
+            <h3 class="lime-hover">GET /api/v1/foods</h3>
               <div class="endpoint">
                 <h4>Request</h4>
                   <div class="block">
                     <pre>
                       <code>
-                        <span>Content-Type: application/json</span>
-                        <span>Accept: application/json</span>
+      Content-Type: application/json
+      Accept: application/json
 
 
-                        body:
-                        {
-                          "api_key": "jgn983hy48thw9begh98h4539h4"
-                        }
+      body:
+      {
+        "api_key": "jgn983hy48thw9begh98h4539h4"
+      }
                       </code>
                     </pre>
                   </div>
@@ -37,46 +38,47 @@
                 <div class="block">
                   <pre>
                     <code>
-                      [
-                          {
-                              "id": 2,
-                              "name": "apple",
-                              "calories": "95",
-                              "created_at": "2019-07-02T20:38:17.957Z",
-                              "updated_at": "2019-07-02T20:38:17.957Z"
-                          },
-                          {
-                              "id": 3,
-                              "name": "roll",
-                              "calories": "77",
-                              "created_at": "2019-07-02T20:38:17.959Z",
-                              "updated_at": "2019-07-02T20:38:17.959Z"
-                          },
-                          {
-                              "id": 4,
-                              "name": "grapes",
-                              "calories": "62",
-                              "created_at": "2019-07-02T20:38:17.959Z",
-                              "updated_at": "2019-07-02T20:38:17.959Z"
-                          }
-                      ]
+    [
+        {
+            "id": 2,
+            "name": "apple",
+            "calories": "95",
+            "created_at": "2019-07-02T20:38:17.957Z",
+            "updated_at": "2019-07-02T20:38:17.957Z"
+        },
+        {
+            "id": 3,
+            "name": "roll",
+            "calories": "77",
+            "created_at": "2019-07-02T20:38:17.959Z",
+            "updated_at": "2019-07-02T20:38:17.959Z"
+        },
+        {
+            "id": 4,
+            "name": "grapes",
+            "calories": "62",
+            "created_at": "2019-07-02T20:38:17.959Z",
+            "updated_at": "2019-07-02T20:38:17.959Z"
+        }
+    ]
                     </code>
                   </pre>
                 </div>
               </div>
-            <h4 class="lime-hover">GET /api/v1/foods/:id</h4>
+              <hr>
+            <h3 class="lime-hover">GET /api/v1/foods/:id</h3>
               <div class="endpoint">
                 <h4>Request</h4>
                 <div class="block">
                   <pre>
                     <code>
-                      Content-Type: application/json
-                      Accept: application/json
+      Content-Type: application/json
+      Accept: application/json
 
-                      body:
-                      {
-                        "api_key": "jgn983hy48thw9begh98h4539h4"
-                      }
+      body:
+      {
+        "api_key": "jgn983hy48thw9begh98h4539h4"
+      }
                     </code>
                   </pre>
                 </div>
@@ -84,32 +86,33 @@
                 <div class="block">
                   <pre>
                     <code>
-                      {
-                          "id": 1,
-                          "name": "cheese",
-                          "calories": "87",
-                          "created_at": "2019-07-02T20:38:17.955Z",
-                          "updated_at": "2019-07-02T20:38:17.955Z"
-                      }
+      {
+          "id": 1,
+          "name": "cheese",
+          "calories": "87",
+          "created_at": "2019-07-02T20:38:17.955Z",
+          "updated_at": "2019-07-02T20:38:17.955Z"
+      }
                     </code>
                   </pre>
                 </div>
               </div>
-            <h4 class="lime-hover">POST /api/v1/foods</h4>
+              <hr>
+            <h3 class="lime-hover">POST /api/v1/foods</h3>
             <div class="endpoint">
               <h4>Request</h4>
               <div class="block">
                 <pre>
                   <code>
-                    Content-Type: application/json
-                    Accept: application/json
+      Content-Type: application/json
+      Accept: application/json
 
-                    body:
-                    {
-                      "name": "blueberries",
-                      "calories": "85",
-                      "api_key": "jgn983hy48thw9begh98h4539h4"
-                    }
+      body:
+      {
+        "name": "blueberries",
+        "calories": "85",
+        "api_key": "jgn983hy48thw9begh98h4539h4"
+      }
                   </code>
                 </pre>
               </div>
@@ -117,32 +120,33 @@
               <div class="block">
                 <pre>
                   <code>
-                    {
-                        "message": "marshmallow has been added to your foods",
-                        "data": {
-                            "name": "marshmallow",
-                            "calories": "25",
-                            "id": 18
-                        }
-                    }
+      {
+          "message": "marshmallow has been added to your foods",
+          "data": {
+              "name": "marshmallow",
+              "calories": "25",
+              "id": 18
+          }
+      }
                   </code>
                 </pre>
               </div>
             </div>
-            <h4 class="lime-hover">PATCH /api/v1/foods/:id</h4>
+            <hr>
+            <h3 class="lime-hover">PATCH /api/v1/foods/:id</h3>
             <div class="endpoint">
               <h4>Request</h4>
               <div class="block">
                 <pre>
                   <code>
-                    Content-Type: application/json
-                    Accept: application/json
+      Content-Type: application/json
+      Accept: application/json
 
-                    body:
-                    {
-                      "calories": "234",
-                      "api_key": "jgn983hy48thw9begh98h4539h4"
-                    }
+      body:
+      {
+        "calories": "234",
+        "api_key": "jgn983hy48thw9begh98h4539h4"
+      }
                   </code>
                 </pre>
               </div>
@@ -150,33 +154,34 @@
               <div class="block">
                 <pre>
                   <code>
-                    {
-                        "message": "Baklava has been edited",
-                        "data": {
-                            "name": "Baklava",
-                            "id": 14,
-                            "calories": "234",
-                            "created_at": "2019-07-03T13:56:50.696Z",
-                            "updated_at": "2019-07-03T13:56:50.696Z"
-                        }
-                    }
+      {
+          "message": "Baklava has been edited",
+          "data": {
+              "name": "Baklava",
+              "id": 14,
+              "calories": "234",
+              "created_at": "2019-07-03T13:56:50.696Z",
+              "updated_at": "2019-07-03T13:56:50.696Z"
+          }
+      }
                   </code>
                 </pre>
               </div>
             </div>
-            <h4 class="lime-hover">DELETE /api/v1/foods/:id</h4>
+            <hr>
+            <h3 class="lime-hover">DELETE /api/v1/foods/:id</h3>
             <div class="endpoint">
               <h4>Request</h4>
               <div class="block">
                 <pre>
                   <code>
-                    Content-Type: application/json
-                    Accept: application/json
+      Content-Type: application/json
+      Accept: application/json
 
-                    body:
-                    {
-                      "api_key": "jgn983hy48thw9begh98h4539h4"
-                    }
+      body:
+      {
+        "api_key": "jgn983hy48thw9begh98h4539h4"
+      }
                   </code>
                 </pre>
               </div>
@@ -184,31 +189,34 @@
               <div class="block">
                 <pre>
                   <code>
-                    {
-                         "message": "celery has been deleted."
-                    }
+      {
+           "message": "celery has been deleted."
+      }
                   </code>
                 </pre>
               </div>
             </div>
           </div>
+        </div>
+        <div class="midline">
+          .
         </div>
         <div class="meals">
-          <h3 class="orange-hover">Meals Endpoints</h3>
+          <h2 class="orange-hover">Meals Endpoints</h2>
           <div class="endpoints">
-            <h4 class="lime-hover">GET /api/v1/meals</h4>
+            <h3 class="lime-hover">GET /api/v1/meals</h3>
             <div class="endpoint">
               <h4>Request</h4>
               <div class="block">
                 <pre>
                   <code>
-                    Content-Type: application/json
-                    Accept: application/json
+      Content-Type: application/json
+      Accept: application/json
 
-                    body:
-                    {
-                      "api_key": "jgn983hy48thw9begh98h4539h4"
-                    }
+      body:
+      {
+        "api_key": "jgn983hy48thw9begh98h4539h4"
+      }
                   </code>
                 </pre>
               </div>
@@ -216,69 +224,70 @@
               <div class="block">
                 <pre>
                   <code>
-                    [
-                        {
-                            "id": 1,
-                            "name": "breakfast",
-                            "created_at": "2019-07-02T20:38:17.963Z",
-                            "updated_at": "2019-07-02T20:38:17.963Z",
-                            "foods": [
-                                {
-                                    "id": 8,
-                                    "name": "egg",
-                                    "calories": "78",
-                                    "created_at": "2019-07-02T20:38:17.964Z",
-                                    "updated_at": "2019-07-02T20:38:17.964Z"
-                                },
-                                {
-                                    "id": 8,
-                                    "name": "egg",
-                                    "calories": "78",
-                                    "created_at": "2019-07-02T20:38:17.964Z",
-                                    "updated_at": "2019-07-02T20:38:17.964Z"
-                                },
-                                {
-                                    "id": 2,
-                                    "name": "apple",
-                                    "calories": "95",
-                                    "created_at": "2019-07-02T20:38:17.957Z",
-                                    "updated_at": "2019-07-02T20:38:17.957Z"
-                                }
-                            ]
-                        },
-                        {
-                            "id": 2,
-                            "name": "snack",
-                            "created_at": "2019-07-02T20:38:17.963Z",
-                            "updated_at": "2019-07-02T20:38:17.963Z",
-                            "foods": [
-                                {
-                                    "id": 4,
-                                    "name": "grapes",
-                                    "calories": "110",
-                                    "created_at": "2019-07-02T20:38:17.964Z",
-                                    "updated_at": "2019-07-02T20:38:17.964Z"
-                                }
-                            ]
-                        }
-                    ]
+      [
+          {
+              "id": 1,
+              "name": "breakfast",
+              "created_at": "2019-07-02T20:38:17.963Z",
+              "updated_at": "2019-07-02T20:38:17.963Z",
+              "foods": [
+                  {
+                      "id": 8,
+                      "name": "egg",
+                      "calories": "78",
+                      "created_at": "2019-07-02T20:38:17.964Z",
+                      "updated_at": "2019-07-02T20:38:17.964Z"
+                  },
+                  {
+                      "id": 8,
+                      "name": "egg",
+                      "calories": "78",
+                      "created_at": "2019-07-02T20:38:17.964Z",
+                      "updated_at": "2019-07-02T20:38:17.964Z"
+                  },
+                  {
+                      "id": 2,
+                      "name": "apple",
+                      "calories": "95",
+                      "created_at": "2019-07-02T20:38:17.957Z",
+                      "updated_at": "2019-07-02T20:38:17.957Z"
+                  }
+              ]
+          },
+          {
+              "id": 2,
+              "name": "snack",
+              "created_at": "2019-07-02T20:38:17.963Z",
+              "updated_at": "2019-07-02T20:38:17.963Z",
+              "foods": [
+                  {
+                      "id": 4,
+                      "name": "grapes",
+                      "calories": "110",
+                      "created_at": "2019-07-02T20:38:17.964Z",
+                      "updated_at": "2019-07-02T20:38:17.964Z"
+                  }
+              ]
+          }
+      ]
                   </code>
                 </pre>
               </div>
             </div>
-            <h4 class="lime-hover">GET /api/v1/meals/:meal_id/foods</h4>
+            <hr>
+            <h3 class="lime-hover">GET /api/v1/meals/:meal_id/foods</h3>
             <div class="endpoint">
               <h4>Request</h4>
               <div class="block">
                 <pre>
                   <code>
-                    Content-Type: application/json
-                    Accept: application/json
+      Content-Type: application/json
+      Accept: application/json
 
-                    body:
-                    {
-                      "api_key": "jgn983hy48thw9begh98h4539h4"
-                    }
+      body:
+      {
+        "api_key": "jgn983hy48thw9begh98h4539h4"
+      }
                   </code>
                 </pre>
               </div>
@@ -286,26 +295,27 @@
               <div class="block">
                 <pre>
                   <code>
-                    {
-                        "id": 3,
-                        "name": "snack",
-                        "created_at": "2019-07-02T20:38:17.965Z",
-                        "updated_at": "2019-07-02T20:38:17.965Z",
-                        "foods": [
-                            {
-                                "id": 7,
-                                "name": "carrots",
-                                "calories": "25",
-                                "created_at": "2019-07-02T20:38:17.962Z",
-                                "updated_at": "2019-07-02T20:38:17.962Z"
-                            }
-                        ]
-                    }
+      {
+          "id": 3,
+          "name": "snack",
+          "created_at": "2019-07-02T20:38:17.965Z",
+          "updated_at": "2019-07-02T20:38:17.965Z",
+          "foods": [
+              {
+                  "id": 7,
+                  "name": "carrots",
+                  "calories": "25",
+                  "created_at": "2019-07-02T20:38:17.962Z",
+                  "updated_at": "2019-07-02T20:38:17.962Z"
+              }
+          ]
+      }
                   </code>
                 </pre>
               </div>
             </div>
-            <h4 class="lime-hover">POST /api/v1/meals/:meal_id/foods/:id</h4>
+            <hr>
+            <h3 class="lime-hover">POST /api/v1/meals/:meal_id/foods/:id</h3>
             <div class="endpoint">
               <h4>Request</h4>
               <div class="block">
@@ -322,7 +332,8 @@
                 </pre>
               </div>
             </div>
-            <h4 class="lime-hover">PATCH /api/v1/meals/:meal_id/foods/:id</h4>
+            <hr>
+            <h3 class="lime-hover">PATCH /api/v1/meals/:meal_id/foods/:id</h3>
             <div class="endpoint">
               <h4>Request</h4>
               <div class="block">
@@ -343,16 +354,51 @@
         </div>
       </div>
     </section>
-    <section class="big-section">
+    <section class="column-section">
       <h2 class="orange-hover">User Views</h2>
       <div class="user-view">
+        <div class="user-view-block">
+          <h3>Login</h3>
+          <img class="screenshot" src="qs_login.png" alt="user's log in view">
+        </div>
+        <div class="user-view-block">
+          <h3>Welcome Dashboard</h3>
+          <img class="screenshot" src="qs_welcome.png" alt="user's dashboard view">
+        </div>
+      </div>
+      <div class="user-view">
+        <div class="user-view-block">
+          <h3>Account</h3>
+          <img class="screenshot" src="qs_account.png" alt="user's account view">
+        </div>
+        <div class="user-view-block">
+          <h3>Foods</h3>
+        </div>
+      </div>
+      <div class="user-view">
+        <div class="user-view-block">
+          <h3>My Meals</h3>
+          <!-- <img class="screenshot" src="qs_account.png" alt="user's account view"> -->
+        </div>
+        <div class="user-view-block">
+          <h3>My Meal</h3>
+          <!-- <img class="screenshot" src="qs_account.png" alt="user's account view"> -->
+        </div>
+      </div>
+      <div class="user-view">
+        <div class="user-view-block">
+          <h3>Recipe Search</h3>
+          <!-- <img class="screenshot" src="qs_account.png" alt="user's account view"> -->
+        </div>
+        <div class="user-view-block">
+          <h3>Recipe Results</h3>
+          <!-- <img class="screenshot" src="qs_account.png" alt="user's account view"> -->
+        </div>
       </div>
 
-    </section>
-    <script type="text/javascript" src="index.js">
 
-    </script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js">
+    </section>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
       $(document).ready(function() {
         $('.endpoints').hide();
         $('.documentation').hide();

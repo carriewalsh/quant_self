@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Quantified Self</title>
+    <link rel="stylesheet" href="/styles.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=DM+Serif+Display&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="nav-bar" role="banner">
+      <h1>Quantified Self API</h1>
+    </nav>
+    <% if (locals.flash) {%>
+      <div class="flash">
+        <%= flash %>
+      </div>
+    <%}%>
+    <div class="login-box">
+      <form class="" action="https://stormy-brushlands-92125.herokuapp.com/users/" method="post">
+        <label for="name">Full Name:</label>
+        <input type="text" name="name" required=true>
+        <label for="email">Email:</label>
+        <input type="email" name="email" placeholder="email@example.com" required=true>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" name="password" required=true>
+        <br>
+        <label for="passwordConfirmation">Password Confirmation:</label>
+        <input type="password" name="passwordConfirmation" required=true>
+        <br>
+        <input type="submit" name="" value="Register" class="submit-button">
+      </form>
+    </div>
+  </body>
+</html>

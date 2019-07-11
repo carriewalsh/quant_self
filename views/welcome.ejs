@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Quantified Self</title>
+    <link rel="stylesheet" href="/styles.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=DM+Serif+Display&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="nav-bar" role="banner">
+      <a href="https://stormy-brushlands-92125.herokuapp.com/users/account" class="submit-button">Account</a>
+      <h2>WELCOME <%= name %>!</h2>
+      <a href="https://stormy-brushlands-92125.herokuapp.com/users/logout" class="submit-button">Log Out</a>
+    </nav>
+    <% if (locals.flash) {%>
+      <div class="flash">
+        <%= flash %>
+      </div>
+    <%}%>
+    <section class="row-section">
+      <div class="left-box">
+        <h2>My Links</h2>
+        <section class="row-section">
+          <a href="https://stormy-brushlands-92125.herokuapp.com/users/my_meals" class="submit-button medium-button">My Meals</a>
+          <a href="https://stormy-brushlands-92125.herokuapp.com/users/foods" class="submit-button medium-button">Foods</a>
+        </section>
+      </div>
+      <div class="right-box">
+        <h2>Recipes</h2>
+        <section class="row-section">
+          <a href="https://stormy-brushlands-92125.herokuapp.com/users/recipe_search" class="submit-button medium-button">Search Recipes</a>
+        </section>
+      </div>
+
+    </section>
+    <!-- <script type="text/javascript" src="../models/food.js">
+
+    </script> -->
+  </body>
+</html>
