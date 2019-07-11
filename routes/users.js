@@ -117,8 +117,7 @@ router.post('/recipe_search', (req,res) => {
     health: req.body.health,
     diet: req.body.diet,
   }
-  fetch(`http://localhost:3001/api/v1/recipes?q=${req.body.q}&calories=${min_calories},${max_calories}&health=${health}&diet=${diet}`)
-  // fetch(`https://qe-microservice.herokuapp.com/api/v1/recipes?q=${req.body.q}&calories=${min_calories},${max_calories}&health=${health}&diet=${diet}`)
+  fetch(`https://qe-microservice.herokuapp.com/api/v1/recipes?q=${q}&calories=${min_calories},${max_calories}&health=${health}&diet=${diet}`)
     .then(response => {
       if (response.ok) {
         return response.json();}
