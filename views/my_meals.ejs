@@ -16,9 +16,11 @@
       <h2>My Meals</h2>
       <% if (meals) {%>
         <% meals.forEach(function(meal) {%>
-          <a href="/users/my_meals/<%= meal.id %>"><%= meal["name"] %>-</a>
-          <p>Total Calories: <%= totalCalories[meal.id] %></p>
-
+          <div class="row-section wide separated">
+            <h2><a href="/users/my_meals/<%= meal.id %>" class="submit-button medium-button"><%= meal["name"] %></a></h2>
+            <h3 class="orange">Total Calories: <%= totalCalories[meal.id] %></h3>
+          </div>
+          <hr>
         <%})};%>
       <% if (meal) { %>
         <h2><%= meal["name"] %> -</h2>

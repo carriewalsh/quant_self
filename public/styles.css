@@ -140,6 +140,15 @@ code {
   height: 350px;
 }
 
+.wide {
+  width: 40%
+}
+
+.separated {
+  border-bottom: 2px solid grey;
+  border-top: 2px solid grey;
+}
+
 p.green {
   color: #879F2D;
   font-size: 20px;
@@ -150,6 +159,10 @@ p.orange, label.orange {
   color: #99301B;
   font-size: 20px;
   margin: 15px;
+}
+
+h3.orange {
+  color: #99301B;
 }
 
 .screenshot {
