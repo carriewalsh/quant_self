@@ -4,16 +4,16 @@ by Carrie Walsh & Ethan Grab
 Deployed site: https://stormy-brushlands-92125.herokuapp.com/
 Microservice site:
 
-This pair project is our second working with JavaScript and Express to build an API. The API stores data about foods and meals for users that can eventually sign in and are given an API key.
+This pair project is our second working with JavaScript and Express to build an API. The API stores data about foods and meals for users that can register, sign in, and are given an API key.
 
-The frontend of the site (which is still in the works) allows the user to log in and see all their saved meals, add meals, pair meals with food, and add foods. They can also edit and delete foods and meals.
+The frontend of the site allows the user to log in and see all their saved meals, look through foods, and search for recipes.
 
-The main site provides the API and a microservice will be set up to create additional functionality connecting with the Edamam API.
+The main site provides the API and front end whereas the microservice is the middleman between the Edamam API and the main site.
 
 
 ## Endpoints
 
-- GET `api/v1/foods`
+### GET `api/v1/foods`
 
 request:
 ```javascript
@@ -57,7 +57,7 @@ response:
   "error": "No foods here yet!"
 }
 ```
-- GET `api/v1/foods/:id`
+### GET `api/v1/foods/:id`
 request:
 ```javascript
 Content-Type: application/json
@@ -84,7 +84,7 @@ response:
     "error": "No food exists with that ID"
 }
 ```
-- POST `api/v1/foods`
+### POST `api/v1/foods`
 request:
 ```javascript
 Content-Type: application/json
@@ -108,7 +108,7 @@ response:
     }
 }
 ```
-- PATCH `api/v1/foods/:id`
+### PATCH `api/v1/foods/:id`
 request:
 ```javascript
 Content-Type: application/json
@@ -139,7 +139,7 @@ response:
     "error": "No food exists with that ID"
 }
 ```
-- DELETE `api/v1/foods/:id`
+### DELETE `api/v1/foods/:id`
 request:
 ```javascript
 Content-Type: application/json
@@ -163,7 +163,7 @@ response:
 }
 ```
 
-- GET `api/v1/meals`
+### GET `api/v1/meals`
 request:
 ```javascript
 Content-Type: application/json
@@ -226,7 +226,7 @@ response:
 404:
 ```javascript
 ```
-- GET `api/v1/meals/:meal_id/foods`
+### GET `api/v1/meals/:meal_id/foods`
 request:
 ```javascript
 Content-Type: application/json
@@ -258,7 +258,7 @@ response:
 404:
 ```javascript
 ```
-- POST `api/v1/meals/:meal_id/foods/:id`
+### POST `api/v1/meals/:meal_id/foods/:id`
 request:
 ```javascript
 ```
@@ -268,10 +268,7 @@ response:
      "message": "Successfully added apple to breakfast."
 }
 ```
-404:
-```javascript
-```
-- DELETE `api/v1/meals/:meal_id/foods/:id`
+### DELETE `api/v1/meals/:meal_id/foods/:id`
 request:
 ```javascript
 Content-Type: application/json
@@ -284,9 +281,9 @@ body:
 ```
 response:
 ```javascript
-```
-404:
-```javascript
+{
+  "message": "Successfully unrelated"
+}
 ```
 
 
@@ -303,11 +300,12 @@ Clone down the repo and package install:
 
 `$ npm install`
 
-Set up the database:
+Set up the databases (dev and test):
 
 ```
 $ psql
 > CREATE DATABASE quant_self;
+> CREATE DATABASE quant_self_test;
 > \q
 ```
 
