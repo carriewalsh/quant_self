@@ -159,7 +159,83 @@ const session = require('../models/POJOs/session')
 //   })
 // });
 
-describe('user views', () => {
+// describe('user views', () => {
+//   beforeEach(() => {
+//     shell.exec('npx knex migrate:latest')
+//   })
+//   beforeEach(() => {
+//     shell.exec('npx knex seed:run')
+//   })
+//   afterEach(() => {
+//     shell.exec('npx knex migrate:rollback')
+//   })
+//
+//   describe('GET /users', () => {
+//     test('it should return a redirect 302', () => {
+//       return request(app).get('/users').then(response => {
+//         expect(response.statusCode).toBe(302)
+//       })
+//     })
+//   })
+//
+//   describe('GET /users/login', () => {
+//     test('it should return a redirect 200', () => {
+//       return request(app).get('/users/login').then(response => {
+//         expect(response.statusCode).toBe(200)
+//       })
+//     })
+//     test('it should be the login page', () => {
+//       return request(app).get('/users/login').then(response => {
+//         expect(response.text).toContain('Log In')
+//       })
+//     })
+//   })
+//
+//   describe('GET /users/welcome?apiKey=XUrJTVKh20s2', () => {
+//     test('it should return a redirect 200', () => {
+//       session.setKey("XUrJTVKh20s2")
+//       return request(app).get('/users/welcome').then(response => {
+//         expect(response.statusCode).toBe(200)
+//       })
+//     })
+//     test('it should be the welcome page', () => {
+//       session.setKey("XUrJTVKh20s2")
+//       return request(app).get('/users/welcome').then(response => {
+//         expect(response.text).toContain('WELCOME')
+//       })
+//     })
+//     test('it should return a redirect 302 with no session.apiKey', () => {
+//       return request(app).get('/users/welcome').then(response => {
+//         session.deleteKey();
+//         expect(response.statusCode).toBe(302)
+//       })
+//     })
+//   })
+//
+//   describe('GET /users/account?apiKey=XUrJTVKh20s2', () => {
+//     test('it should return a redirect 200', () => {
+//       session.setKey("XUrJTVKh20s2")
+//       return request(app).get('/users/account').then(response => {
+//         expect(response.statusCode).toBe(200)
+//       })
+//     })
+//     test('it should be the account page', () => {
+//       session.setKey("XUrJTVKh20s2")
+//       return request(app).get('/users/account').then(response => {
+//         expect(response.text).toContain('jstones0@ted.com')
+//       })
+//     })
+//     test('it should return a redirect 302 with no session.apiKey', () => {
+//       return request(app).get('/users/account').then(response => {
+//         session.deleteKey();
+//         expect(response.statusCode).toBe(302)
+//       })
+//     })
+//   })
+// })
+
+
+describe('Edamame Microservice', () => {
   beforeEach(() => {
     shell.exec('npx knex migrate:latest')
   })
@@ -170,65 +246,42 @@ describe('user views', () => {
     shell.exec('npx knex migrate:rollback')
   })
 
-  describe('GET /users', () => {
-    test('it should return a redirect 302', () => {
-      return request(app).get('/users').then(response => {
-        expect(response.statusCode).toBe(302)
+  describe('GET /recipes/calories_search?q=chicken&calories=500-700', () => {
+    test('it should return a 200', () => {
+      return request(app).get('/api/v1/recipes/calories_search?q=chicken&calories=500-700').then(response => {
+        expect(response.statusCode).toBe(200)
       })
     })
   })
 
-  describe('GET /users/login', () => {
-    test('it should return a redirect 200', () => {
-      return request(app).get('/users/login').then(response => {
+  describe('GET /recipes/ingredient_search?q=chicken&ingre=2-5', () => {
+    test('it should return a 200', () => {
+      return request(app).get('/api/v1/recipes/ingredient_search?q=chicken&ingr=2-5').then(response => {
         expect(response.statusCode).toBe(200)
-      })
-    })
-    test('it should be the login page', () => {
-      return request(app).get('/users/login').then(response => {
-        expect(response.text).toContain('Log In')
       })
     })
   })
 
-  describe('GET /users/welcome?apiKey=XUrJTVKh20s2', () => {
-    test('it should return a redirect 200', () => {
-      session.setKey("XUrJTVKh20s2")
-      return request(app).get('/users/welcome').then(response => {
+  describe('GET /recipes/diet_search?q=chicken&diet=Peanut-Free', () => {
+    test('it should return a 200', () => {
+      return request(app).get('/api/v1/recipes/health_search?q=chicken&health=peanut-free').then(response => {
         expect(response.statusCode).toBe(200)
-      })
-    })
-    test('it should be the welcome page', () => {
-      session.setKey("XUrJTVKh20s2")
-      return request(app).get('/users/welcome').then(response => {
-        expect(response.text).toContain('WELCOME')
-      })
-    })
-    test('it should return a redirect 302 with no session.apiKey', () => {
-      return request(app).get('/users/welcome').then(response => {
-        session.deleteKey();
-        expect(response.statusCode).toBe(302)
       })
     })
   })
 
-  describe('GET /users/account?apiKey=XUrJTVKh20s2', () => {
-    test('it should return a redirect 200', () => {
-      session.setKey("XUrJTVKh20s2")
-      return request(app).get('/users/account').then(response => {
+  describe('GET /recipes/diet_search?q=chicken&diet=Low-Carb', () => {
+    test('it should return a 200', () => {
+      return request(app).get('/api/v1/recipes/diet_search?q=chicken&diet=low-carb').then(response => {
         expect(response.statusCode).toBe(200)
       })
     })
-    test('it should be the account page', () => {
-      session.setKey("XUrJTVKh20s2")
-      return request(app).get('/users/account').then(response => {
-        expect(response.text).toContain('jstones0@ted.com')
-      })
-    })
-    test('it should return a redirect 302 with no session.apiKey', () => {
-      return request(app).get('/users/account').then(response => {
-        session.deleteKey();
-        expect(response.statusCode).toBe(302)
+  })
+
+  describe('GET /recipes/food_search?q=chicken', () => {
+    test('it should return a 200', () => {
+      return request(app).get('/api/v1/recipes/food_search?q=chicken').then(response => {
+        expect(response.statusCode).toBe(200)
       })
     })
   })
