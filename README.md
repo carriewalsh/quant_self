@@ -11,7 +11,7 @@ The frontend of the site allows the user to log in and see all their saved meals
 
 The main site provides the API and front end whereas the microservice is the middleman between the Edamam API and the main site.
 
-Future functionality will allow users to create foods and create meals.
+Future functionality will allow users to create foods and create meals, which is currently only available from the API.
 
 
 ## Endpoints
