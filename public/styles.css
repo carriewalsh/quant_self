@@ -182,6 +182,19 @@ h3.orange {
   transition: all .3s ease-in-out;
 }
 
+.foods-list {
+  background: #e3eeba;
+  color: #133512;
+  padding: 15px;
+  width: 40%;
+}
+
+p.food-list {
+  margin: 5px 0px;
+  padding: 20px;
+  width: 100%;
+}
+
 .screenshot {
   width: 95%;
 }
