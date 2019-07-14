@@ -15,16 +15,21 @@
     <section class="column-section">
       <h2>Recipes Search</h2>
       <section class="column-section">
-          <h3>search terms<%= search[0]['q'] %></h3>
-          <h3>min calories<%= search[0]['min_calories'] %></h3>
-          <h3>max calories<%= search[0]['max_calories'] %></h3>
-          <h3>health<%= search[0]['health'] %></h3>
-          <h3>diet<%= search[0]['diet'] %></h3>
+          <h3>search terms<%= search['q'] %></h3>
+          <h3>min calories<%= search['min_calories'] %></h3>
+          <h3>max calories<%= search['max_calories'] %></h3>
+          <h3>health<%= search['health'] %></h3>
+          <h3>diet<%= search['diet'] %></h3>
       </section>
       <section class="row-section-wrap">
-        <% recipes.forEach(recipe => { %>
-            <%= recipe %>
-        <% }) %>
+        <h3><%= name %></h3>
+        <a href="<%= link %>"></a>
+        <ul>
+          <% ingredients.forEach(ingredient => { %>
+            <li><%= ingredient %></li>
+          <% }) %>
+        </ul>
+        <h4></h4>
 
       </section>
 
