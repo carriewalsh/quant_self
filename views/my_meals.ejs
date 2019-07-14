@@ -20,6 +20,10 @@
             <h2><a href="https://stormy-brushlands-92125.herokuapp.com/users/my_meals/<%= meal.id %>/foods" class="submit-button medium-button"><%= meal["name"] %></a></h2>
             <h3 class="orange">Total Calories: <%= totalCalories[meal.id] %></h3>
           </div>
+          <div class="foods-list">
+            <% meal["foods"].forEach(food => {%>
+              <p><%= food.name %> - calories: <%= food.calories %></p>
+          </div>
           <hr>
         <%})};%>
       <% if (meal) { %>
