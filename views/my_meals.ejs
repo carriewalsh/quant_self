@@ -23,8 +23,9 @@
           <div class="foods-list">
             <% meal["foods"].forEach(food => { %>
               <p><%= food.name %> - calories: <%= food.calories %></p>
+            <% }) %>
           </div>
-        <% })})}; %>
+      <% })}; %>
       <% if (meal) { %>
         <h2><%= meal["name"] %> -</h2>
         <p>Total Calories: <%= totalCalories[meal.id] %></p>
