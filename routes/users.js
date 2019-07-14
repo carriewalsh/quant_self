@@ -117,16 +117,23 @@ router.post('/recipe_search', (req,res) => {
     health: req.body.health,
     diet: req.body.diet,
   }
-  fetch(`https://qe-microservice.herokuapp.com/api/v1/recipes?q=${q}&calories=${min_calories},${max_calories}&health=${health}&diet=${diet}`)
+  // fetch(`https://qe-microservice.herokuapp.com/api/v1/recipes?q=${q}&calories=${min_calories},${max_calories}&health=${health}&diet=${diet}`)
+  // fetch(`https://qe-microservice.herokuapp.com/api/v1/recipes?from=0&to=1&q=${q}&calories=${min_calories}-${max_calories}`)
+  fetch(`https://qe-microservice.herokuapp.com/api/v1/recipes?from=0&to=1&q=${q}&calories=${min_calories}-${max_calories}`)
     .then(response => {
+      // eval(pry.it)
       if (response.ok) {
         return response.json();}
         throw new Error('Request Failed.');},
         networkError => console.log(networkError.message))
     .then(recipes => {
+      eval(pry.it)
       res.render('recipes.ejs', {
-        recipes: recipes,
-        search: search
+        name: recipes["data"]["recipes"][0]["recipeName"],
+        link: recipes["data"]["recipes"][0]["recipeUrl"],
+        ingredients: recipes["data"]["recipes"][0]["ingredientList"],
+        yield: recipes["data"]["recipes"][0]["yield"],
+        search: req.body
       })
     })
     .catch((error) => {
